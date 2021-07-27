@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap');
+@import "variables";
+
+body {
+    background-color: $principal-color-black;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*=============== HEADER ===============*/
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: $bg-image-header;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    
+    .main {
+        width: 80%;
+        margin: 0px auto;
+        position: relative;
+
+        /* ===== nav-bar ===== */
+        nav {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            padding: 25px 0px;
+            align-items: center;
+            
+            .logo {
+                width: 50%;
+                display: block;
+                transition: all .5s ease;
+
+                text-decoration: none;
+                color: $principal-color-white;
+                fill: $principal-color-white;
+                letter-spacing: 2px;                
+
+                h1 {font-size: 28px;}
+                
+                .svg-35mmfilm {
+                    width: 40px;
+                    height: 40px;
+                    transform: rotate(90deg);
+                    position: relative;
+                    top: 10px;
+                }
+            }
+            .logo:hover {
+                color: $hover-header-color;
+                fill: $hover-header-color;
+            }
+
+            .nav-menu {
+                width: 50%;
+                display: block;
+                list-style: none;
+
+                li {
+                    float: right;
+                    padding:20px;                    
+                }
+
+                a {
+                    font-size: 22px;
+                    letter-spacing: 1.5px;
+                    text-decoration: none;
+                    color: $principal-color-white;
+                    padding: 10px;
+                    transition: all .3s ease;
+                }
+                a:hover {
+                    color: $hover-header-color;
+                    border-bottom: 1px solid $hover-header-color ;
+                    border-radius: 5px;
+                }
+            }
+        }
+        /* ===== /end nav-bar ===== */
+
+        /* ===== arrow down ===== */              
+        .arrowdown-container {
+            display: block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid $hover-header-color;
+            border-radius: 100%;
+            fill: $principal-color-white;
+            position: absolute;
+            transform: translateX(-100%);
+            left: 100%;
+            top: 80vh;
+            transition: all .1s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                width: 50px;
+                animation: breathing_element 4s infinite;
+            }
+
+            /* Animation arrow down */             
+            @keyframes breathing_element {
+                from {
+                    -webkit-transform: scale3d(1,1,1);
+                    transform: scale3d(1, 1, 1);
+                }
+                50% {
+                    -webkit-transform: scale3d(1.3, 1.3, 1.3);
+                    transform: scale3d(1.3, 1.3, 1.3);
+                }
+                to {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }                
+            }
+        }
+        .arrowdown-container:hover {
+            fill: $hover-header-color;
+            border: 2px solid $principal-color-white;
+        }
+        /* ===== /end arrow down ===== */            
+    }
+}
+/*=============== /end HEADER ===============*/
+
