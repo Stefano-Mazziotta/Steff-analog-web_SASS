@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap");
 /* ========== Page colors ========== */
 /* ========== /end Page colors ========== */
@@ -18,68 +19,74 @@ header {
   background-attachment: fixed;
   background-size: cover;
 }
-header .main {
+header .container-header {
   width: 80%;
   margin: 0px auto;
   position: relative;
   /* ===== nav-bar ===== */
-  /* ===== /end nav-bar ===== */
+  /* ===== ✓ nav-bar ✓ ===== */
   /* ===== arrow down ===== */
-  /* ===== /end arrow down ===== */
+  /* ===== ✓ arrow down ✓ ===== */
 }
-header .main nav {
+header .container-header nav {
   width: 100%;
   display: flex;
   flex-direction: row;
   padding: 25px 0px;
   align-items: center;
 }
-header .main nav .logo {
-  width: 50%;
-  display: block;
-  transition: all 0.5s ease;
+header .container-header nav .logo {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.5s ease, fill 0.5s ease;
   text-decoration: none;
   color: #f8f9fa;
   fill: #f8f9fa;
   letter-spacing: 2px;
 }
-header .main nav .logo h1 {
+header .container-header nav .logo h1 {
   font-size: 28px;
 }
-header .main nav .logo .svg-35mmfilm {
+header .container-header nav .logo .svg-35mmfilm {
   width: 40px;
   height: 40px;
   transform: rotate(90deg);
   position: relative;
-  top: 10px;
+  right: 15px;
 }
-header .main nav .logo:hover {
+header .container-header nav .logo:hover {
   color: #adb5bd;
   fill: #adb5bd;
 }
-header .main nav .nav-menu {
-  width: 50%;
-  display: block;
+header .container-header nav .nav-menu {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
   list-style: none;
 }
-header .main nav .nav-menu li {
-  float: right;
-  padding: 20px;
+header .container-header nav .nav-menu li {
+  display: inline-block;
+  text-align: center;
 }
-header .main nav .nav-menu a {
+header .container-header nav .nav-menu a {
+  display: inline-block;
   font-size: 22px;
   letter-spacing: 1.5px;
   text-decoration: none;
   color: #f8f9fa;
-  padding: 10px;
-  transition: all 0.3s ease;
+  padding: 25px;
+  transition: border 0.3s ease, color 0.3s ease;
 }
-header .main nav .nav-menu a:hover {
+header .container-header nav .nav-menu a:hover {
   color: #adb5bd;
   border-bottom: 1px solid #adb5bd;
   border-radius: 5px;
 }
-header .main .arrowdown-container {
+header .container-header .arrowdown-container {
   display: block;
   width: 100px;
   height: 100px;
@@ -87,16 +94,17 @@ header .main .arrowdown-container {
   border-radius: 100%;
   fill: #f8f9fa;
   position: absolute;
-  transform: translateX(-100%);
+  transform: translate(-50%, -50%);
   left: 100%;
   top: 80vh;
   transition: all 0.1s ease;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(../css/style.css);
   /* Animation arrow down */
 }
-header .main .arrowdown-container svg {
+header .container-header .arrowdown-container svg {
   width: 50px;
   animation: breathing_element 4s infinite;
 }
@@ -114,11 +122,69 @@ header .main .arrowdown-container svg {
     transform: scale3d(1, 1, 1);
   }
 }
-header .main .arrowdown-container:hover {
+header .container-header .arrowdown-container:hover {
   fill: #adb5bd;
   border: 2px solid #f8f9fa;
 }
 
-/*=============== /end HEADER ===============*/
+/*=============== ✓ HEADER ✓ ===============*/
+/*=============== Responsive ===============*/
+@media (max-width: 1270px) {
+  header {
+    background-position: center;
+  }
+  header .container-header nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  header .container-header nav .logo {
+    width: 100%;
+  }
+  header .container-header nav .nav-menu {
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+  }
+}
+@media (max-width: 840px) {
+  header .container-header nav .nav-menu li a {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+}
+@media (max-width: 650px) {
+  header .container-header nav .logo {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  header .container-header nav .nav-menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+  }
+  header .container-header nav .nav-menu li {
+    text-align: left;
+  }
+  header .container-header nav .nav-menu li a {
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  header .container-header .arrowdown-container {
+    left: 50%;
+  }
+}
+@media (max-width: 360px) {
+  header .container-header nav .logo h1 {
+    font-size: 24px;
+  }
+  header .container-header nav .logo .svg-35mmfilm {
+    width: 30px;
+    height: 30px;
+  }
+}
+/*=============== ✓ Responsive ✓ ===============*/
 
 /*# sourceMappingURL=style.css.map */
