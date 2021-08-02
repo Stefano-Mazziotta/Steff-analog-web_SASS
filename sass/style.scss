@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap');
 @import "variables";
 
+*{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
 body {
     background-color: $principal-color-black;
     font-family: 'Montserrat', sans-serif;
-    scroll-behavior: smooth;
 }
 
 /*=============== HEADER ===============*/
@@ -16,7 +20,7 @@ header {
     background-attachment:fixed;
     background-size: cover;
     
-    .container-header {
+    .header__container {
         width: 80%;
         margin: 0px auto;
         position: relative;
@@ -30,7 +34,7 @@ header {
             align-items: center;
 
             // HEADER logo styles            
-            .logo {
+            .nav__logo {
                 width: 30%;
                 display: flex;
                 flex-direction: row;
@@ -44,19 +48,20 @@ header {
                 fill: $principal-color-white;
                 letter-spacing: 2px;                
 
-                h1 {font-size: 28px;}
+                .nav__title {font-size: 28px;}
                 
-                .svg-35mmfilm {
+                .nav__svg-35mmfilm {
                     width: 40px;
                     height: 40px;
                     transform: rotate(90deg);
                     position: relative;
                     right: 15px;
                 }
-            }
-            .logo:hover {
-                color: $hover-header-color;
-                fill: $hover-header-color;
+                
+                &:hover {
+                    color: $hover-header-color;
+                    fill: $hover-header-color;
+                }
             }
 
             // nav-menu styles
@@ -79,18 +84,19 @@ header {
                     color: $principal-color-white;
                     padding: 25px;
                     transition: border .3s ease, color .3s ease;
-                }
-                a:hover {
-                    color: $hover-header-color;
-                    border-bottom: 1px solid $hover-header-color ;
-                    border-radius: 5px;
+                    
+                    &:hover {
+                        color: $hover-header-color;
+                        border-bottom: 1px solid $hover-header-color ;
+                        border-radius: 5px;
+                    }
                 }
             }
         }
         /* ===== ✓ nav-bar ✓ ===== */
 
         /* ===== arrow down ===== */              
-        .arrowdown-container {
+        .header__arrowdown-container {
             display: block;
             width: 100px;
             height: 100px;
@@ -127,16 +133,160 @@ header {
                     transform: scale3d(1, 1, 1);
                 }                
             }
-        }
-        .arrowdown-container:hover {
-            fill: $hover-header-color;
-            border: 2px solid $principal-color-white;
+            
+            &:hover {
+                fill: $hover-header-color;
+                border: 2px solid $principal-color-white;
+            }
         }
         /* ===== ✓ arrow down ✓ ===== */            
     }
 }
 /*=============== ✓ HEADER ✓ ===============*/
 
+/*=============== Sections ===============*/
+section {
+    // Black&white or color
+    .bw-color {
+        height: 100vh;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        padding-bottom: 100px;
+        padding-top: 100px;
+        background-color: $principal-color-black;
+
+        .bw-color__container-flex {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .container-img {
+                width: 25%;
+                padding: 10px;
+                border: 2px solid $principal-color-white;
+                border-radius: $border-radius-standard_10;
+                opacity: .7;
+                transition: opacity .5s ease;
+                position: relative;
+                
+                &:hover{
+                    opacity: 1;
+                }
+
+                img {
+                    width: 100%;
+                    border-radius: $border-radius-standard_10;
+                }
+
+                .container-img__title {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    text-transform: uppercase;
+                    color: $principal-color-white;
+                    letter-spacing: 2px;
+                    font-weight: 400;
+                    width: 100%;
+                    text-align: center;
+                    padding: 10px;
+                    
+                }
+            }
+        }
+    }
+    // ✓ Black&white or color ✓
+
+    // Random photo
+    .random {
+        background-color: $principal-color-white;
+
+        .random__container {
+            width: 80%;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom:100px ;
+
+            .random__btn{
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1.5px;
+
+                padding: 15px 20px;
+                background-color: $principal-color-black;
+                color: $principal-color-white;
+                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
+                border: 2px solid $principal-color-black;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: all .3s ease;
+
+                margin-bottom: 75px;   
+
+                &:hover{
+                    transform: translateY(-7px);
+                    background-color: $principal-color-white;
+                    color: $principal-color-black;
+                }
+            }
+
+            .random__img-container {
+                width: 100%;
+                border: 1px solid black;
+                border-radius: 10px;
+                padding: 10px;
+                img {
+                    border-radius: 10px;
+                    width: 100%;
+                }
+            }
+        }    
+    }
+    // ✓Random photo ✓
+
+    // Gallery
+    .gallery {
+        height: 100vh;
+
+        .gallery__container {
+            width: 80%;
+            margin: 0px auto;        
+
+            .gallery__title{
+                text-align: center;
+                color: $principal-color-white;
+                font-size: 64px;
+                letter-spacing: 1.5px;
+                font-weight: 500;
+                width: 30%;
+                
+                margin-top: 0;
+                margin-bottom: 100px;
+                margin-right: auto;
+                margin-left: auto;
+
+                padding-right: 10px;
+                padding-left: 10px;                    
+                padding-bottom: 20px;
+                
+                border-bottom: 1px solid $principal-color-white;
+                border-radius: 10px;
+            }
+            
+            .gallery__grid-container {
+                height: 1000px;
+                width: 100%;
+                background-color: white;
+            }
+        }    
+    }
+    // ✓ Gallery ✓
+}
+/*=============== ✓ Sections ✓ ===============*/
 
 /*=============== Responsive ===============*/
 
@@ -144,14 +294,14 @@ header {
     // HEADER navbar repaired.
     header {
         background-position: center;
-        .container-header{
+        .header__container{
 
             nav {
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 
-                .logo {width: 100%;}
+                .nav__logo {width: 100%;}
 
                 .nav-menu {
                     width: 100%;
@@ -162,12 +312,25 @@ header {
         }
     }
     // ✓ HEADER navbar repaired. ✓
+
+    section {
+
+        // black&white or color repaired
+        .bw-color {
+            .bw-color__container-flex {
+                .container-img {
+                    width: 35%;
+                }
+            }
+        }
+        // ✓ black&white or color repaired ✓
+    }
 }
 
 @media (max-width: 840px) {
     // HEADER navbar repaired.
     header {
-        .container-header {            
+        .header__container {            
             nav {
                 .nav-menu {
                     li {
@@ -181,14 +344,31 @@ header {
         }
     }
     // ✓ HEADER navbar repaired. ✓
+
+    section {
+        // black&white or color repaired
+        .bw-color {
+            height: 100%;
+            .bw-color__container-flex {
+                flex-direction: column;
+
+                .container-img {
+                    margin-bottom: 100px;
+                    width: 50%;
+                }
+            }
+        }
+        // ✓ black&white or color repaired ✓
+    }
+    
 }
 
 @media (max-width: 650px) {
     // HEADER navbar repaired & arrow-down center.
     header {
-        .container-header{
+        .header__container{
             nav {
-                .logo {
+                .nav__logo {
                     width: 100%;
                     justify-content: flex-start;
                 }
@@ -210,24 +390,54 @@ header {
                 }
             }
             // arrow-down center 
-            .arrowdown-container {left: 50%;}
+            .header__arrowdown-container {left: 50%;}
         }
     }
     // ✓ HEADER navbar repaired & arrow-down center. ✓
 }
 
+@media (max-width: 491px) {
+    
+    section {
+        // black&white or color repaired.       
+        .bw-color {
+            .bw-color__container-flex { 
+                .container-img{
+                    width: 70%;
+                }
+            }
+        }
+        // ✓ black&white or color repaired. ✓
+
+        // random photo repaired.
+        .random {
+            .random__container{
+                margin-top: 75px;
+
+                .random__btn{
+                    padding: 10px 15px;
+                }
+                .random__img-container{
+                    width: 105%;
+                }
+            }
+        }
+        // ✓ random photo repaired. ✓
+    }
+}
+
 @media (max-width: 360px) {
-    //HEADER navbar repaired
+    //HEADER navbar repaired.
     header {
-        .container-header {
+        .header__container {
             nav {
-                .logo {
+                .nav__logo {
                     // navbar repaired
-                    h1 {
+                    .nav__title {
                         font-size:24px
                     }
 
-                    .svg-35mmfilm {
+                    .nav__svg-35mmfilm {
                         width: 30px;
                         height: 30px;
                     }
@@ -236,8 +446,20 @@ header {
             }   
         }
     }  
-    // ✓ navbar repaired 
+    // ✓ navbar repaired.
+
+    section {
+        // black&white or color repaired.        
+        .bw-color {
+            .bw-color__container-flex { 
+                .container-img{
+                    .container-img__title{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        // ✓ black&white or color repaired. ✓
+    }
 }
-
 /*=============== ✓ Responsive ✓ ===============*/
-

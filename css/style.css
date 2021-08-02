@@ -4,10 +4,14 @@
 /* ========== /end Page colors ========== */
 /* ========== Standard properties ========== */
 /* ========== /end Standard properties ========== */
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #212529;
   font-family: "Montserrat", sans-serif;
-  scroll-behavior: smooth;
 }
 
 /*=============== HEADER ===============*/
@@ -19,7 +23,7 @@ header {
   background-attachment: fixed;
   background-size: cover;
 }
-header .container-header {
+header .header__container {
   width: 80%;
   margin: 0px auto;
   position: relative;
@@ -28,14 +32,14 @@ header .container-header {
   /* ===== arrow down ===== */
   /* ===== ✓ arrow down ✓ ===== */
 }
-header .container-header nav {
+header .header__container nav {
   width: 100%;
   display: flex;
   flex-direction: row;
   padding: 25px 0px;
   align-items: center;
 }
-header .container-header nav .logo {
+header .header__container nav .nav__logo {
   width: 30%;
   display: flex;
   flex-direction: row;
@@ -48,31 +52,31 @@ header .container-header nav .logo {
   fill: #f8f9fa;
   letter-spacing: 2px;
 }
-header .container-header nav .logo h1 {
+header .header__container nav .nav__logo .nav__title {
   font-size: 28px;
 }
-header .container-header nav .logo .svg-35mmfilm {
+header .header__container nav .nav__logo .nav__svg-35mmfilm {
   width: 40px;
   height: 40px;
   transform: rotate(90deg);
   position: relative;
   right: 15px;
 }
-header .container-header nav .logo:hover {
+header .header__container nav .nav__logo:hover {
   color: #adb5bd;
   fill: #adb5bd;
 }
-header .container-header nav .nav-menu {
+header .header__container nav .nav-menu {
   width: 70%;
   display: flex;
   justify-content: flex-end;
   list-style: none;
 }
-header .container-header nav .nav-menu li {
+header .header__container nav .nav-menu li {
   display: inline-block;
   text-align: center;
 }
-header .container-header nav .nav-menu a {
+header .header__container nav .nav-menu a {
   display: inline-block;
   font-size: 22px;
   letter-spacing: 1.5px;
@@ -81,12 +85,12 @@ header .container-header nav .nav-menu a {
   padding: 25px;
   transition: border 0.3s ease, color 0.3s ease;
 }
-header .container-header nav .nav-menu a:hover {
+header .header__container nav .nav-menu a:hover {
   color: #adb5bd;
   border-bottom: 1px solid #adb5bd;
   border-radius: 5px;
 }
-header .container-header .arrowdown-container {
+header .header__container .header__arrowdown-container {
   display: block;
   width: 100px;
   height: 100px;
@@ -104,7 +108,7 @@ header .container-header .arrowdown-container {
   background-image: url(../css/style.css);
   /* Animation arrow down */
 }
-header .container-header .arrowdown-container svg {
+header .header__container .header__arrowdown-container svg {
   width: 50px;
   animation: breathing_element 4s infinite;
 }
@@ -122,67 +126,215 @@ header .container-header .arrowdown-container svg {
     transform: scale3d(1, 1, 1);
   }
 }
-header .container-header .arrowdown-container:hover {
+header .header__container .header__arrowdown-container:hover {
   fill: #adb5bd;
   border: 2px solid #f8f9fa;
 }
 
 /*=============== ✓ HEADER ✓ ===============*/
+/*=============== Sections ===============*/
+section .bw-color {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  background-color: #212529;
+}
+section .bw-color .bw-color__container-flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+section .bw-color .bw-color__container-flex .container-img {
+  width: 25%;
+  padding: 10px;
+  border: 2px solid #f8f9fa;
+  border-radius: 10px;
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
+  position: relative;
+}
+section .bw-color .bw-color__container-flex .container-img:hover {
+  opacity: 1;
+}
+section .bw-color .bw-color__container-flex .container-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+section .bw-color .bw-color__container-flex .container-img .container-img__title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  color: #f8f9fa;
+  letter-spacing: 2px;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+section .random {
+  background-color: #f8f9fa;
+}
+section .random .random__container {
+  width: 80%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+section .random .random__container .random__btn {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  padding: 15px 20px;
+  background-color: #212529;
+  color: #f8f9fa;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #212529;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-bottom: 75px;
+}
+section .random .random__container .random__btn:hover {
+  transform: translateY(-7px);
+  background-color: #f8f9fa;
+  color: #212529;
+}
+section .random .random__container .random__img-container {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+section .random .random__container .random__img-container img {
+  border-radius: 10px;
+  width: 100%;
+}
+section .gallery {
+  height: 100vh;
+}
+section .gallery .gallery__container {
+  width: 80%;
+  margin: 0px auto;
+}
+section .gallery .gallery__container .gallery__title {
+  text-align: center;
+  color: #f8f9fa;
+  font-size: 64px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  width: 30%;
+  margin-top: 0;
+  margin-bottom: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f8f9fa;
+  border-radius: 10px;
+}
+section .gallery .gallery__container .gallery__grid-container {
+  height: 1000px;
+  width: 100%;
+  background-color: white;
+}
+
+/*=============== ✓ Sections ✓ ===============*/
 /*=============== Responsive ===============*/
 @media (max-width: 1270px) {
   header {
     background-position: center;
   }
-  header .container-header nav {
+  header .header__container nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  header .container-header nav .logo {
+  header .header__container nav .nav__logo {
     width: 100%;
   }
-  header .container-header nav .nav-menu {
+  header .header__container nav .nav-menu {
     width: 100%;
     justify-content: center;
     padding: 0;
   }
+
+  section .bw-color .bw-color__container-flex .container-img {
+    width: 35%;
+  }
 }
 @media (max-width: 840px) {
-  header .container-header nav .nav-menu li a {
+  header .header__container nav .nav-menu li a {
     font-size: 18px;
     padding: 10px 15px;
   }
+
+  section .bw-color {
+    height: 100%;
+  }
+  section .bw-color .bw-color__container-flex {
+    flex-direction: column;
+  }
+  section .bw-color .bw-color__container-flex .container-img {
+    margin-bottom: 100px;
+    width: 50%;
+  }
 }
 @media (max-width: 650px) {
-  header .container-header nav .logo {
+  header .header__container nav .nav__logo {
     width: 100%;
     justify-content: flex-start;
   }
-  header .container-header nav .nav-menu {
+  header .header__container nav .nav-menu {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 0;
   }
-  header .container-header nav .nav-menu li {
+  header .header__container nav .nav-menu li {
     text-align: left;
   }
-  header .container-header nav .nav-menu li a {
+  header .header__container nav .nav-menu li a {
     padding-bottom: 15px;
     padding-left: 10px;
     padding-right: 10px;
   }
-  header .container-header .arrowdown-container {
+  header .header__container .header__arrowdown-container {
     left: 50%;
   }
 }
+@media (max-width: 491px) {
+  section .bw-color .bw-color__container-flex .container-img {
+    width: 70%;
+  }
+  section .random .random__container {
+    margin-top: 75px;
+  }
+  section .random .random__container .random__btn {
+    padding: 10px 15px;
+  }
+  section .random .random__container .random__img-container {
+    width: 105%;
+  }
+}
 @media (max-width: 360px) {
-  header .container-header nav .logo h1 {
+  header .header__container nav .nav__logo .nav__title {
     font-size: 24px;
   }
-  header .container-header nav .logo .svg-35mmfilm {
+  header .header__container nav .nav__logo .nav__svg-35mmfilm {
     width: 30px;
     height: 30px;
+  }
+
+  section .bw-color .bw-color__container-flex .container-img .container-img__title {
+    font-size: 18px;
   }
 }
 /*=============== ✓ Responsive ✓ ===============*/
