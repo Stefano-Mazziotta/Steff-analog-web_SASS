@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Steff analog web (SASS)</title>
 </head>
 <body>
@@ -52,9 +54,9 @@
     <section>
 
         <!--============== black & white OR color ==============-->
-        <article class="bw-color">
-            <div id="blackandwhite-or-color_id" class="bw-color__container-flex">
-                <div class="container-img">
+        <article id="blackandwhite-or-color_id" class="bw-color">
+            <div class="bw-color__container-flex" data-aos="fade-right">
+                <div class="container-img" >
                     <a href=""><img src="components/images/elección_bw_color/vertical-color2.jpg" alt="Color image"></a>
                     <h2 class="container-img__title">Color</h2>
                 </div>
@@ -89,7 +91,7 @@
             </svg>
             <!-- separator -->
 
-            <div class="random__container">
+            <div class="random__container" data-aos="fade-left">
                 <button id="random__btn-id" class="random__btn">RANDOM PHOTO</button>
                 <div class="random__img-container">
                     <img src="components/images/random_photo/rio_color.jpg" alt="film image random photo section">
@@ -119,11 +121,39 @@
                 0,11,0L0,0Z"></path>
             </svg>
             <!-- separator -->
-            <div class="gallery__container">
+
+            <!-- contenedor section gallery -->
+            <div class="gallery__container-all">
                 
                 <h2 class="gallery__title">Gallery</h2>
 
-                <div class="gallery__grid-container"></div>
+                <div class="gallery__container">
+
+                    <!-- street -->
+                    <div class="container-img vertical_uno ">
+                        <img src="components/images/gallery/Vertical/street.jpg" alt="">
+                        <h3 class="title-img">Street</h3>
+                    </div>
+
+                    <!-- champa -->
+                    <div class="container-img horizontal_uno">
+                        <img class="uno" src="components/images/gallery/Horizontal/Champaqui.JPG" alt="">
+                        <h3 class="title-img">Champaquí</h3>
+                    </div>
+
+                    <!-- rosario -->
+                    <div class="container-img horizontal_dos">
+                        <img class="dos" src="components/images/gallery/Horizontal/Rosario.jpg" alt="">
+                        <h3 class="title-img">Rosario</h3>
+                    </div>
+
+                    <!-- street 2 -->
+                    <div class="container-img horizontal_tres">
+                        <img class="tres" src="components/images/gallery/Horizontal/pajaros-peatonal.jpg" alt="">
+                        <h3 class="title-img">Street 2</h3>
+                    </div>
+                    
+                </div>
             </div>
             
         </article>
@@ -136,5 +166,8 @@
 
     </footer>
     
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/aos-init.js"></script>
+    <script src="js/prueba.js"></script>
 </body>
 </html>

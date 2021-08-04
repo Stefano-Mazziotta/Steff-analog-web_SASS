@@ -4,6 +4,7 @@
 *{
     scroll-behavior: smooth;
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
@@ -146,7 +147,7 @@ header {
 
 /*=============== Sections ===============*/
 section {
-    // Black&white or color
+    // ---------- Black&white or color ---------- //
     .bw-color {
         height: 100vh;
         display: flex;
@@ -189,15 +190,15 @@ section {
                     font-weight: 400;
                     width: 100%;
                     text-align: center;
-                    padding: 10px;
+                    padding: 20px;
                     
                 }
             }
         }
     }
-    // ✓ Black&white or color ✓
+    // ---------- ✓ Black&white or color ✓ ---------- //
 
-    // Random photo
+    // ---------- Random photo ---------- //
     .random {
         background-color: $principal-color-white;
 
@@ -225,7 +226,7 @@ section {
                 border-radius: 5px;
                 transition: all .3s ease;
 
-                margin-bottom: 75px;   
+                margin-bottom: 35px;   
 
                 &:hover{
                     transform: translateY(-7px);
@@ -235,7 +236,7 @@ section {
             }
 
             .random__img-container {
-                width: 100%;
+                width: 80%;
                 border: 1px solid black;
                 border-radius: 10px;
                 padding: 10px;
@@ -246,52 +247,99 @@ section {
             }
         }    
     }
-    // ✓Random photo ✓
+    // ---------- ✓ Random photo ✓ ---------- //
 
-    // Gallery
+    // ---------- Gallery ---------- //
     .gallery {
-        height: 100vh;
+        padding-bottom: 150px;
 
-        .gallery__container {
+        // contenedor de la sección galería.
+        .gallery__container-all {
             width: 80%;
             margin: 0px auto;        
 
+            // título de la sección galería.
             .gallery__title{
                 text-align: center;
                 color: $principal-color-white;
                 font-size: 64px;
                 letter-spacing: 1.5px;
-                font-weight: 500;
-                width: 30%;
+                font-weight: 300;
+                width: 50%;
                 
                 margin-top: 0;
                 margin-bottom: 100px;
                 margin-right: auto;
                 margin-left: auto;
 
-                padding-right: 10px;
-                padding-left: 10px;                    
+                padding-right: 20px;
+                padding-left: 20px;                    
                 padding-bottom: 20px;
                 
                 border-bottom: 1px solid $principal-color-white;
                 border-radius: 10px;
             }
             
-            .gallery__grid-container {
-                height: 1000px;
+            // contenedor grid de la galería. 
+            .gallery__container {
                 width: 100%;
-                background-color: white;
-            }
+
+                display: grid;
+                grid-template-columns: repeat(2,40%);
+                grid-template-rows: auto auto auto;
+                justify-content: center;
+
+                grid-template-areas:    "verticaluno   horizontaluno" 
+                                        "verticaluno    horizontaldos"   
+                                        "horizontaltres   horizontaltres";
+                gap: 60px 30px;
+
+                // contenedor de cada imágen de la galería.
+                .container-img {
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    position: relative;
+                    
+                    border: 1px solid $principal-color-white;
+                    padding: 10px;
+                    border-radius: 20px;
+                    opacity: .8;
+                    transition: opacity .3s ease;
+                    
+                    cursor: pointer;                
+                    &:hover{
+                        opacity: 1;
+                        border: 2px solid $principal-color-white;
+                    } 
+
+                    img {
+                        width: 100%;
+                        border-radius: 10px;
+                    }
+
+                    .title-img{
+                        position: absolute;
+                        top: 100%;
+                        padding-top: 10px;
+                        
+                        color: $principal-color-white;
+                        font-weight: 400;
+                        letter-spacing: .5px;
+                        text-transform: uppercase;
+                    }
+                }
+            }    
         }    
     }
-    // ✓ Gallery ✓
+    // ---------- ✓ Gallery ✓ ---------- //
 }
 /*=============== ✓ Sections ✓ ===============*/
 
 /*=============== Responsive ===============*/
 
 @media (max-width: 1270px) {
-    // HEADER navbar repaired.
+    // HEADER navbar repaired. //
     header {
         background-position: center;
         .header__container{
@@ -315,7 +363,7 @@ section {
 
     section {
 
-        // black&white or color repaired
+        // black&white or color repaired //
         .bw-color {
             .bw-color__container-flex {
                 .container-img {
@@ -323,12 +371,12 @@ section {
                 }
             }
         }
-        // ✓ black&white or color repaired ✓
+        // ✓ black&white or color repaired ✓ //
     }
 }
 
 @media (max-width: 840px) {
-    // HEADER navbar repaired.
+    // HEADER navbar repaired. //
     header {
         .header__container {            
             nav {
@@ -343,10 +391,10 @@ section {
             }
         }
     }
-    // ✓ HEADER navbar repaired. ✓
+    // ✓ HEADER navbar repaired. ✓ //
 
     section {
-        // black&white or color repaired
+        // black&white or color ---> position repaired //
         .bw-color {
             height: 100%;
             .bw-color__container-flex {
@@ -358,13 +406,32 @@ section {
                 }
             }
         }
-        // ✓ black&white or color repaired ✓
+        // ✓ black&white or color ---> position repaired ✓ //
+
+        // gallery ---> position repaired //
+        .gallery {
+            .gallery__container-all{
+                .gallery__container{
+                        grid-template-columns: 90%;
+                        grid-template-rows: auto auto auto auto;
+                        grid-template-areas:    "verticaluno"
+                                                "horizontaluno"
+                                                "horizontaldos"
+                                                "horizontaltres";
+                        gap: 50px 0px;
+
+                        img{
+                            width:100%
+                        }
+                    }
+                }
+            }
+        }
+        // ✓ gallery ---> position repaired ✓ //
     }
-    
-}
 
 @media (max-width: 650px) {
-    // HEADER navbar repaired & arrow-down center.
+    // HEADER navbar repaired & arrow-down center. // 
     header {
         .header__container{
             nav {
@@ -393,13 +460,28 @@ section {
             .header__arrowdown-container {left: 50%;}
         }
     }
-    // ✓ HEADER navbar repaired & arrow-down center. ✓
+    // ✓ HEADER navbar repaired & arrow-down center. ✓ //
+
+    section{
+        // gallery ---> title repaired //
+        .gallery {
+            .gallery__container-all {
+                .gallery__title {
+                    font-size: 32px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    width: 50%;
+                }
+            }
+        }
+        // ✓ gallery ---> title repaired ✓ //
+    }
 }
 
 @media (max-width: 491px) {
     
     section {
-        // black&white or color repaired.       
+        // black&white or color repaired. //      
         .bw-color {
             .bw-color__container-flex { 
                 .container-img{
@@ -407,7 +489,7 @@ section {
                 }
             }
         }
-        // ✓ black&white or color repaired. ✓
+        // ✓ black&white or color repaired. ✓ //
 
         // random photo repaired.
         .random {
@@ -422,12 +504,26 @@ section {
                 }
             }
         }
-        // ✓ random photo repaired. ✓
+        // ✓ random photo repaired. ✓ //
+
+        // gallery ---> change horizontal imgs for vertical imgs. // 
+        .gallery {
+            .gallery__container-all {
+                .gallery__container {
+                    .container-img {
+                        .uno {content: url(../components/images/gallery/Vertical/Responsive/Champaqui-responsive.JPG);}
+                        .dos {content: url(../components/images/gallery/Vertical/Responsive/rosario-responsive.jpg);}
+                        .tres {content: url(../components/images/gallery/Vertical/Responsive/street2-responsive.jpg);}
+                    }
+                }
+            }
+        }
+        // ✓ gallery ---> change horizontal imgs for vertical imgs. ✓ // 
     }
 }
 
 @media (max-width: 360px) {
-    //HEADER navbar repaired.
+    // HEADER navbar repaired. //
     header {
         .header__container {
             nav {
@@ -446,10 +542,10 @@ section {
             }   
         }
     }  
-    // ✓ navbar repaired.
+    // ✓ navbar repaired. //
 
     section {
-        // black&white or color repaired.        
+        // black&white or color repaired. //      
         .bw-color {
             .bw-color__container-flex { 
                 .container-img{
@@ -459,7 +555,18 @@ section {
                 }
             }
         }
-        // ✓ black&white or color repaired. ✓
+        // ✓ black&white or color repaired. ✓ //
+
+        // gallery ---> title reposition //
+        .gallery {
+            .gallery__container-all {
+                .gallery__title {
+                    margin-top: 50px;
+                    margin-bottom: 75px;
+                }
+            }
+        }
+        // gallery ---> title reposition //
     }
 }
 /*=============== ✓ Responsive ✓ ===============*/

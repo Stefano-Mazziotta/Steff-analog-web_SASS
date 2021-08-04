@@ -4,9 +4,34 @@
 /* ========== /end Page colors ========== */
 /* ========== Standard properties ========== */
 /* ========== /end Standard properties ========== */
+.hide {
+  grid-row: span 2;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.vertical_uno {
+  grid-area: verticaluno;
+}
+
+.horizontal_uno {
+  grid-area: horizontaluno;
+}
+
+.horizontal_dos {
+  grid-area: horizontaldos;
+}
+
+.horizontal_tres {
+  grid-area: horizontaltres;
+}
+
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -173,7 +198,7 @@ section .bw-color .bw-color__container-flex .container-img .container-img__title
   font-weight: 400;
   width: 100%;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
 section .random {
   background-color: #f8f9fa;
@@ -199,7 +224,7 @@ section .random .random__container .random__btn {
   cursor: pointer;
   border-radius: 5px;
   transition: all 0.3s ease;
-  margin-bottom: 75px;
+  margin-bottom: 35px;
 }
 section .random .random__container .random__btn:hover {
   transform: translateY(-7px);
@@ -207,7 +232,7 @@ section .random .random__container .random__btn:hover {
   color: #212529;
 }
 section .random .random__container .random__img-container {
-  width: 100%;
+  width: 80%;
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
@@ -217,33 +242,66 @@ section .random .random__container .random__img-container img {
   width: 100%;
 }
 section .gallery {
-  height: 100vh;
+  padding-bottom: 150px;
 }
-section .gallery .gallery__container {
+section .gallery .gallery__container-all {
   width: 80%;
   margin: 0px auto;
 }
-section .gallery .gallery__container .gallery__title {
+section .gallery .gallery__container-all .gallery__title {
   text-align: center;
   color: #f8f9fa;
   font-size: 64px;
   letter-spacing: 1.5px;
-  font-weight: 500;
-  width: 30%;
+  font-weight: 300;
+  width: 50%;
   margin-top: 0;
   margin-bottom: 100px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #f8f9fa;
   border-radius: 10px;
 }
-section .gallery .gallery__container .gallery__grid-container {
-  height: 1000px;
+section .gallery .gallery__container-all .gallery__container {
   width: 100%;
-  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 40%);
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+  grid-template-areas: "verticaluno   horizontaluno" "verticaluno    horizontaldos" "horizontaltres   horizontaltres";
+  gap: 60px 30px;
+}
+section .gallery .gallery__container-all .gallery__container .container-img {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  border: 1px solid #f8f9fa;
+  padding: 10px;
+  border-radius: 20px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+section .gallery .gallery__container-all .gallery__container .container-img:hover {
+  opacity: 1;
+  border: 2px solid #f8f9fa;
+}
+section .gallery .gallery__container-all .gallery__container .container-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+section .gallery .gallery__container-all .gallery__container .container-img .title-img {
+  position: absolute;
+  top: 100%;
+  padding-top: 10px;
+  color: #f8f9fa;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 /*=============== ✓ Sections ✓ ===============*/
@@ -286,6 +344,15 @@ section .gallery .gallery__container .gallery__grid-container {
     margin-bottom: 100px;
     width: 50%;
   }
+  section .gallery .gallery__container-all .gallery__container {
+    grid-template-columns: 90%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "verticaluno" "horizontaluno" "horizontaldos" "horizontaltres";
+    gap: 50px 0px;
+  }
+  section .gallery .gallery__container-all .gallery__container img {
+    width: 100%;
+  }
 }
 @media (max-width: 650px) {
   header .header__container nav .nav__logo {
@@ -309,6 +376,13 @@ section .gallery .gallery__container .gallery__grid-container {
   header .header__container .header__arrowdown-container {
     left: 50%;
   }
+
+  section .gallery .gallery__container-all .gallery__title {
+    font-size: 32px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 50%;
+  }
 }
 @media (max-width: 491px) {
   section .bw-color .bw-color__container-flex .container-img {
@@ -323,6 +397,15 @@ section .gallery .gallery__container .gallery__grid-container {
   section .random .random__container .random__img-container {
     width: 105%;
   }
+  section .gallery .gallery__container-all .gallery__container .container-img .uno {
+    content: url(../components/images/gallery/Vertical/Responsive/Champaqui-responsive.JPG);
+  }
+  section .gallery .gallery__container-all .gallery__container .container-img .dos {
+    content: url(../components/images/gallery/Vertical/Responsive/rosario-responsive.jpg);
+  }
+  section .gallery .gallery__container-all .gallery__container .container-img .tres {
+    content: url(../components/images/gallery/Vertical/Responsive/street2-responsive.jpg);
+  }
 }
 @media (max-width: 360px) {
   header .header__container nav .nav__logo .nav__title {
@@ -335,6 +418,10 @@ section .gallery .gallery__container .gallery__grid-container {
 
   section .bw-color .bw-color__container-flex .container-img .container-img__title {
     font-size: 18px;
+  }
+  section .gallery .gallery__container-all .gallery__title {
+    margin-top: 50px;
+    margin-bottom: 75px;
   }
 }
 /*=============== ✓ Responsive ✓ ===============*/
