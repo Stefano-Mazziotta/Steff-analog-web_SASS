@@ -10,10 +10,9 @@ $bg-image-header: url(../components/images/bg_header/bg_header.jpg);
 $border-radius-standard_10: 10px;
 /* ========== /end Standard properties ========== */
 
-// aplicables
-.hide {grid-row: span 2;}
-.wide {grid-column: span 2;}
+/*  ========== clases aplicables  ========== */
 
+// gallery ---> grid area
 .vertical_uno {    grid-area: verticaluno;}
 .horizontal_uno {    grid-area: horizontaluno;}
 .horizontal_dos {    grid-area: horizontaldos;}

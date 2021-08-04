@@ -4,14 +4,7 @@
 /* ========== /end Page colors ========== */
 /* ========== Standard properties ========== */
 /* ========== /end Standard properties ========== */
-.hide {
-  grid-row: span 2;
-}
-
-.wide {
-  grid-column: span 2;
-}
-
+/*  ========== clases aplicables  ========== */
 .vertical_uno {
   grid-area: verticaluno;
 }
@@ -249,12 +242,14 @@ section .gallery .gallery__container-all {
   margin: 0px auto;
 }
 section .gallery .gallery__container-all .gallery__title {
-  text-align: center;
   color: #f8f9fa;
   font-size: 64px;
-  letter-spacing: 1.5px;
-  font-weight: 300;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-align: center;
   width: 50%;
+  border-bottom: 2px solid #f8f9fa;
+  border-radius: 10px;
   margin-top: 0;
   margin-bottom: 100px;
   margin-right: auto;
@@ -262,8 +257,6 @@ section .gallery .gallery__container-all .gallery__title {
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #f8f9fa;
-  border-radius: 10px;
 }
 section .gallery .gallery__container-all .gallery__container {
   width: 100%;
@@ -302,6 +295,68 @@ section .gallery .gallery__container-all .gallery__container .container-img .tit
   font-weight: 400;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+section .aboutme {
+  background-color: #f8f9fa;
+  height: 100%;
+  padding-bottom: 100px;
+}
+section .aboutme .aboutme__container-all {
+  width: 80%;
+  margin: 0 auto;
+}
+section .aboutme .aboutme__container-all .aboutme__title {
+  color: #212529;
+  font-size: 64px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 2px solid #212529;
+  border-radius: 10px;
+  width: 60%;
+  margin-top: 0;
+  margin-bottom: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+section .aboutme .aboutme__container-all .aboutme__container-flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 75px;
+}
+section .aboutme .aboutme__container-all .aboutme__container-flex .container-img {
+  width: 30%;
+  padding: 15px;
+  border: 1px solid #212529;
+  border-radius: 20px;
+  transition: all 0.1s ease;
+}
+section .aboutme .aboutme__container-all .aboutme__container-flex .container-img:hover {
+  border: 2px solid #212529;
+}
+section .aboutme .aboutme__container-all .aboutme__container-flex .container-img img {
+  width: 100%;
+  border-radius: 20px;
+}
+section .aboutme .aboutme__container-all .aboutme__text {
+  width: 85%;
+  color: #212529;
+  font-size: 28px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.8em;
+  margin: 0 auto;
+  padding: 20px;
+}
+section .aboutme .aboutme__container-all .aboutme__text .light {
+  font-weight: 300;
 }
 
 /*=============== ✓ Sections ✓ ===============*/
@@ -353,6 +408,19 @@ section .gallery .gallery__container-all .gallery__container .container-img .tit
   section .gallery .gallery__container-all .gallery__container img {
     width: 100%;
   }
+  section .aboutme .aboutme__container-all .aboutme__title {
+    font-size: 48px;
+  }
+  section .aboutme .aboutme__container-all .aboutme__container-flex {
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  section .aboutme .aboutme__container-all .aboutme__container-flex .container-img {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 50px;
+  }
 }
 @media (max-width: 650px) {
   header .header__container nav .nav__logo {
@@ -383,6 +451,16 @@ section .gallery .gallery__container-all .gallery__container .container-img .tit
     padding-right: 0px;
     width: 50%;
   }
+  section .aboutme .aboutme__container-all .aboutme__title {
+    font-size: 36px;
+  }
+  section .aboutme .aboutme__container-all .container-img {
+    width: 100%;
+  }
+  section .aboutme .aboutme__container-all .aboutme__text {
+    width: 90%;
+    font-size: 24px;
+  }
 }
 @media (max-width: 491px) {
   section .bw-color .bw-color__container-flex .container-img {
@@ -406,6 +484,18 @@ section .gallery .gallery__container-all .gallery__container .container-img .tit
   section .gallery .gallery__container-all .gallery__container .container-img .tres {
     content: url(../components/images/gallery/Vertical/Responsive/street2-responsive.jpg);
   }
+  section .aboutme .aboutme__container-all .aboutme__title {
+    font-size: 36px;
+    width: 80%;
+    margin-top: 25px;
+  }
+  section .aboutme .aboutme__container-all .aboutme__container-flex .container-img {
+    padding: 5px;
+  }
+  section .aboutme .aboutme__container-all .aboutme__text {
+    width: 100%;
+    font-size: 18px;
+  }
 }
 @media (max-width: 360px) {
   header .header__container nav .nav__logo .nav__title {
@@ -422,6 +512,9 @@ section .gallery .gallery__container-all .gallery__container .container-img .tit
   section .gallery .gallery__container-all .gallery__title {
     margin-top: 50px;
     margin-bottom: 75px;
+  }
+  section .aboutme .aboutme__container-all .aboutme__title {
+    width: 100%;
   }
 }
 /*=============== ✓ Responsive ✓ ===============*/

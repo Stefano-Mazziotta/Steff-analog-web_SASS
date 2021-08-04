@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap');
 @import "variables";
+@import "mixins";
 
 *{
     scroll-behavior: smooth;
@@ -7,13 +8,13 @@
     margin: 0;
 }
 
-body {
+body{
     background-color: $principal-color-black;
     font-family: 'Montserrat', sans-serif;
 }
 
 /*=============== HEADER ===============*/
-header {
+header{
     width: 100%;
     height: 100vh;
     background-image: $bg-image-header;
@@ -148,7 +149,7 @@ header {
 /*=============== Sections ===============*/
 section {
     // ---------- Black&white or color ---------- //
-    .bw-color {
+    .bw-color{
         height: 100vh;
         display: flex;
         align-items:center;
@@ -199,7 +200,7 @@ section {
     // ---------- ✓ Black&white or color ✓ ---------- //
 
     // ---------- Random photo ---------- //
-    .random {
+    .random{
         background-color: $principal-color-white;
 
         .random__container {
@@ -250,7 +251,7 @@ section {
     // ---------- ✓ Random photo ✓ ---------- //
 
     // ---------- Gallery ---------- //
-    .gallery {
+    .gallery{
         padding-bottom: 150px;
 
         // contenedor de la sección galería.
@@ -260,12 +261,13 @@ section {
 
             // título de la sección galería.
             .gallery__title{
-                text-align: center;
-                color: $principal-color-white;
-                font-size: 64px;
-                letter-spacing: 1.5px;
-                font-weight: 300;
+                // mixin ->
+                // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
+                @include styles_text($principal-color-white, 64px, 1px, 500, center);
                 width: 50%;
+
+                border-bottom: 2px solid $principal-color-white;
+                border-radius: 10px;
                 
                 margin-top: 0;
                 margin-bottom: 100px;
@@ -274,10 +276,7 @@ section {
 
                 padding-right: 20px;
                 padding-left: 20px;                    
-                padding-bottom: 20px;
-                
-                border-bottom: 1px solid $principal-color-white;
-                border-radius: 10px;
+                padding-bottom: 20px;    
             }
             
             // contenedor grid de la galería. 
@@ -333,14 +332,84 @@ section {
         }    
     }
     // ---------- ✓ Gallery ✓ ---------- //
+
+    // ---------- aboutme ---------- //
+    .aboutme{
+        background-color: $principal-color-white;
+        height:100%;
+        padding-bottom: 100px;
+        
+        .aboutme__container-all {
+            width: 80%;
+            margin: 0 auto;
+
+            .aboutme__title {
+                // mixin ->
+                // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
+                @include styles_text($principal-color-black, 64px, 1px, 500, center);
+                border-bottom: 2px solid $principal-color-black;
+                border-radius: 10px;
+
+                width: 60%;
+
+                margin-top: 0;
+                margin-bottom: 100px;
+                margin-right: auto;
+                margin-left: auto;
+
+                padding-right: 20px;
+                padding-left: 20px;                    
+                padding-bottom: 20px; 
+            }
+
+            .aboutme__container-flex {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;  
+
+                margin-bottom: 75px;
+
+                .container-img {
+                    width: 30%;
+
+                    padding: 15px;
+                    border: 1px solid $principal-color-black;
+                    border-radius: 20px;
+                    
+                    transition: all .1s ease;                    
+                    &:hover{border: 2px solid $principal-color-black;}
+
+                    img {
+                        width: 100%;
+                        border-radius: 20px;
+                    }
+                }
+            }
+            
+            .aboutme__text {
+                width: 85%;
+                // mixin -> styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
+                @include styles_text($principal-color-black, 28px, 1.5px, 600,center);
+                line-height: 1.8em;
+        
+                margin: 0 auto;
+                padding: 20px;
+
+                .light{font-weight: 300;}
+            }
+        }
+    }
+    // ---------- ✓ aboutme ✓ ---------- //
 }
 /*=============== ✓ Sections ✓ ===============*/
 
 /*=============== Responsive ===============*/
 
-@media (max-width: 1270px) {
+@media (max-width: 1270px){
     // HEADER navbar repaired. //
-    header {
+    header{
         background-position: center;
         .header__container{
 
@@ -361,10 +430,10 @@ section {
     }
     // ✓ HEADER navbar repaired. ✓
 
-    section {
+    section{
 
         // black&white or color repaired //
-        .bw-color {
+        .bw-color{
             .bw-color__container-flex {
                 .container-img {
                     width: 35%;
@@ -375,9 +444,9 @@ section {
     }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 840px){
     // HEADER navbar repaired. //
-    header {
+    header{
         .header__container {            
             nav {
                 .nav-menu {
@@ -393,9 +462,9 @@ section {
     }
     // ✓ HEADER navbar repaired. ✓ //
 
-    section {
+    section{
         // black&white or color ---> position repaired //
-        .bw-color {
+        .bw-color{
             height: 100%;
             .bw-color__container-flex {
                 flex-direction: column;
@@ -409,7 +478,7 @@ section {
         // ✓ black&white or color ---> position repaired ✓ //
 
         // gallery ---> position repaired //
-        .gallery {
+        .gallery{
             .gallery__container-all{
                 .gallery__container{
                         grid-template-columns: 90%;
@@ -426,13 +495,38 @@ section {
                     }
                 }
             }
-        }
         // ✓ gallery ---> position repaired ✓ //
-    }
 
-@media (max-width: 650px) {
+        // aboutme ---> position and fontsize repaired //
+        .aboutme{
+            .aboutme__container-all {
+
+                .aboutme__title{
+                    font-size: 48px;
+                }
+
+                .aboutme__container-flex{
+                    flex-direction: column;
+                    justify-content: center;
+
+                    margin-bottom: 25px;
+
+                    .container-img{
+                        width: 60%;
+
+                        padding: 10px;
+                        margin-bottom: 50px;
+                    }
+                }
+            }
+        }
+        // ✓ aboutme ---> position and fontsize repaired ✓ //
+    }       
+}
+
+@media (max-width: 650px){
     // HEADER navbar repaired & arrow-down center. // 
-    header {
+    header{
         .header__container{
             nav {
                 .nav__logo {
@@ -464,7 +558,7 @@ section {
 
     section{
         // gallery ---> title repaired //
-        .gallery {
+        .gallery{
             .gallery__container-all {
                 .gallery__title {
                     font-size: 32px;
@@ -475,14 +569,34 @@ section {
             }
         }
         // ✓ gallery ---> title repaired ✓ //
+
+        // aboutme ---> fontsize repaired //
+        .aboutme{
+            .aboutme__container-all{
+
+                .aboutme__title{
+                    font-size: 36px;
+                }
+
+                .container-img{
+                    width: 100%;
+                }
+
+                .aboutme__text{
+                    width: 90%;
+                    font-size: 24px;
+                }
+            }
+        }
+        // ✓ aboutme ---> fontsize repaired ✓ //
     }
 }
 
 @media (max-width: 491px) {
     
-    section {
+    section{
         // black&white or color repaired. //      
-        .bw-color {
+        .bw-color{
             .bw-color__container-flex { 
                 .container-img{
                     width: 70%;
@@ -492,7 +606,7 @@ section {
         // ✓ black&white or color repaired. ✓ //
 
         // random photo repaired.
-        .random {
+        .random{
             .random__container{
                 margin-top: 75px;
 
@@ -507,7 +621,7 @@ section {
         // ✓ random photo repaired. ✓ //
 
         // gallery ---> change horizontal imgs for vertical imgs. // 
-        .gallery {
+        .gallery{
             .gallery__container-all {
                 .gallery__container {
                     .container-img {
@@ -519,12 +633,36 @@ section {
             }
         }
         // ✓ gallery ---> change horizontal imgs for vertical imgs. ✓ // 
+
+        // aboutme ---> fontsize repaired //
+        .aboutme{
+            .aboutme__container-all{
+
+                .aboutme__title{
+                    font-size: 36px;
+                    width: 80%;
+                    margin-top: 25px;
+                }
+
+                .aboutme__container-flex{
+                    .container-img {
+                        padding: 5px;
+                    }                    
+                }
+
+                .aboutme__text{
+                    width: 100%;
+                    font-size: 18px;
+                }
+            }
+        }
+        // ✓ aboutme ---> fontsize repaired ✓ //
     }
 }
 
 @media (max-width: 360px) {
     // HEADER navbar repaired. //
-    header {
+    header{
         .header__container {
             nav {
                 .nav__logo {
@@ -544,9 +682,9 @@ section {
     }  
     // ✓ navbar repaired. //
 
-    section {
+    section{
         // black&white or color repaired. //      
-        .bw-color {
+        .bw-color{
             .bw-color__container-flex { 
                 .container-img{
                     .container-img__title{
@@ -558,7 +696,7 @@ section {
         // ✓ black&white or color repaired. ✓ //
 
         // gallery ---> title reposition //
-        .gallery {
+        .gallery{
             .gallery__container-all {
                 .gallery__title {
                     margin-top: 50px;
@@ -567,6 +705,17 @@ section {
             }
         }
         // gallery ---> title reposition //
+
+        // aboutme ---> fontsize repaired //
+        .aboutme{
+            .aboutme__container-all{
+
+                .aboutme__title{
+                    width: 100%;                    
+                }
+            }
+        }
+        // ✓ aboutme ---> fontsize repaired ✓ //
     }
 }
 /*=============== ✓ Responsive ✓ ===============*/
