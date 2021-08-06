@@ -1,1 +1,0 @@
-console.log({"Apellido":"Mazziotta","Edad":18})

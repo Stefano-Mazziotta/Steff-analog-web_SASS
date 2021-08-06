@@ -17,3 +17,21 @@ $border-radius-standard_10: 10px;
 .horizontal_uno {    grid-area: horizontaluno;}
 .horizontal_dos {    grid-area: horizontaldos;}
 .horizontal_tres {    grid-area: horizontaltres;}
+
+// ------ animations popup ------ //
+// entrada del título del popup.
+@keyframes entrada_titulo {
+    from{
+        transform: translateY(-50px);
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+// entrada de los inputs.
+@keyframes entrada_inputs {
+    from{opacity:0;}
+    to{opacity: 1;}
+}
+

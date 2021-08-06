@@ -21,6 +21,23 @@
   grid-area: horizontaltres;
 }
 
+@keyframes entrada_titulo {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes entrada_inputs {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -360,6 +377,166 @@ section .aboutme .aboutme__container-all .aboutme__text .light {
 }
 
 /*=============== ✓ Sections ✓ ===============*/
+/*=============== Footer ===============*/
+footer {
+  height: 200px;
+}
+footer .footer__container-social {
+  width: 50%;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid #f8f9fa;
+  border-radius: 45px;
+  padding-bottom: 20px;
+}
+footer .footer__container-social .svg-container {
+  width: 50px;
+  display: block;
+  fill: #f8f9fa;
+  stroke: #f8f9fa;
+  transition: all 0.3s ease;
+}
+footer .footer__container-social .svg-container:hover {
+  fill: #adb5bd;
+  stroke: #adb5bd;
+  transform: scale(1.1);
+}
+footer .footer__text {
+  color: #f8f9fa;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  /* cuando el popup tenga la clase active, 
+     se le aplican las siguientes propiedades: */
+}
+.overlay.active {
+  visibility: visible;
+}
+.overlay .popup-container {
+  position: relative;
+  text-align: center;
+  width: 40%;
+  min-height: 500px;
+  background-color: #f8f9fa;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  padding: 50px 0px 10px 0px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: scale(0.7);
+}
+.overlay .popup-container .popup__cross--close {
+  display: block;
+  cursor: pointer;
+  fill: #212529;
+  transition: fill 0.3s ease;
+}
+.overlay .popup-container .popup__cross--close:hover {
+  fill: #d00000;
+}
+.overlay .popup-container .popup__cross--close svg {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 3%;
+  right: 3%;
+}
+.overlay .popup-container .popup__title {
+  color: #f8f9fa;
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-align: center;
+  background-color: #212529;
+  text-transform: uppercase;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 50px;
+  opacity: 0;
+  animation: entrada_titulo 0.8s ease forwards;
+}
+.overlay .popup-container .popup__form {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  opacity: 0;
+  animation: entrada_inputs 0.8s ease 0.6 forwards;
+}
+.overlay .popup-container .popup__form .form__input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.overlay .popup-container .popup__form .form__input-container input, .overlay .popup-container .popup__form .form__input-container textarea {
+  outline: none;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  width: 80%;
+  border: 2px solid #212529;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 25px;
+  transition: all 0.1s linear;
+}
+.overlay .popup-container .popup__form .form__input-container input:focus, .overlay .popup-container .popup__form .form__input-container textarea:focus {
+  border: 1px solid #212529;
+}
+.overlay .popup-container .popup__form .form__input-container textarea {
+  min-width: 80%;
+  max-width: 80%;
+  min-height: 200px;
+  max-height: 250px;
+}
+.overlay .popup-container .popup__form .form__btn {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  padding: 10px 20px;
+  background-color: #212529;
+  color: #f8f9fa;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #212529;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-bottom: 35px;
+  opacity: 1;
+}
+.overlay .popup-container .popup__form .form__btn:hover {
+  border: 1px solid #212529;
+  transform: translateY(7px);
+  background-color: #f8f9fa;
+  color: #212529;
+}
+.overlay .popup-container.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*=============== ✓ Footer ✓ ===============*/
 /*=============== Responsive ===============*/
 @media (max-width: 1270px) {
   header {
@@ -381,6 +558,10 @@ section .aboutme .aboutme__container-all .aboutme__text .light {
 
   section .bw-color .bw-color__container-flex .container-img {
     width: 35%;
+  }
+
+  .overlay .popup-container {
+    width: 60%;
   }
 }
 @media (max-width: 840px) {
@@ -420,6 +601,10 @@ section .aboutme .aboutme__container-all .aboutme__text .light {
     width: 60%;
     padding: 10px;
     margin-bottom: 50px;
+  }
+
+  .overlay .popup-container {
+    width: 80%;
   }
 }
 @media (max-width: 650px) {
@@ -461,6 +646,16 @@ section .aboutme .aboutme__container-all .aboutme__text .light {
     width: 90%;
     font-size: 24px;
   }
+
+  footer {
+    height: 150px;
+  }
+  footer .footer__container-social {
+    width: 80%;
+  }
+  footer .footer__container-social .svg-container {
+    width: 40px;
+  }
 }
 @media (max-width: 491px) {
   section .bw-color .bw-color__container-flex .container-img {
@@ -496,6 +691,13 @@ section .aboutme .aboutme__container-all .aboutme__text .light {
     width: 100%;
     font-size: 18px;
   }
+
+  footer .footer__container-social {
+    width: 80%;
+  }
+  footer .footer__container-social .svg-container {
+    width: 30px;
+  }
 }
 @media (max-width: 360px) {
   header .header__container nav .nav__logo .nav__title {
@@ -515,6 +717,27 @@ section .aboutme .aboutme__container-all .aboutme__text .light {
   }
   section .aboutme .aboutme__container-all .aboutme__title {
     width: 100%;
+  }
+
+  footer .footer__container-social {
+    width: 80%;
+  }
+  footer .footer__container-social .svg-container {
+    width: 25px;
+  }
+  footer .footer__text {
+    font-size: 14px;
+  }
+
+  .overlay .popup-container {
+    width: 90%;
+  }
+  .overlay .popup-container .popup__form .form__input-container input, .overlay .popup-container .popup__form .form__input-container textarea {
+    width: 90%;
+  }
+  .overlay .popup-container .popup__form .form__input-container textarea {
+    min-width: 90%;
+    max-width: 90%;
   }
 }
 /*=============== ✓ Responsive ✓ ===============*/
