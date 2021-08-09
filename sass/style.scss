@@ -337,7 +337,7 @@ section {
     .aboutme{
         background-color: $principal-color-white;
         height:100%;
-        padding-bottom: 100px;
+        padding-bottom: 50px;
         
         .aboutme__container-all {
             width: 80%;
@@ -377,9 +377,13 @@ section {
                     padding: 15px;
                     border: 1px solid $principal-color-black;
                     border-radius: 20px;
+                    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
                     
                     transition: all .1s ease;                    
-                    &:hover{border: 2px solid $principal-color-black;}
+                    &:hover{
+                        border: 2px solid $principal-color-black;
+                        box-shadow: none;
+                    }
 
                     img {
                         width: 100%;
@@ -395,9 +399,30 @@ section {
                 line-height: 1.8em;
         
                 margin: 0 auto;
+                margin-bottom: 50px;
                 padding: 20px;
 
                 .light{font-weight: 300;}
+            }
+            
+            .aboutme__arrow-up{
+                display: block;
+                // transform: rotate(180deg);
+                
+                cursor: pointer;
+                width: 60px;
+                height: 60px;
+                fill: $principal-color-black;
+                
+                margin-left: auto;
+                margin-right: auto;
+
+                transition: all .3s ease;
+                &:hover{
+                    fill: $hover-button-color;
+                    transform: translateY(-4px);
+                }
+
             }
         }
     }

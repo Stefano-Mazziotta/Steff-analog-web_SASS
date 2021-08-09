@@ -1,8 +1,8 @@
 // Accedo a cada elemento necesario a modificar.
-var open_btn = document.getElementById('js-open-btn'),
-    overlay = document.getElementById('js-overlay'),
-    popup = document.getElementById('js-popup'),
-    close_btn = document.getElementById('js-close-btn');
+const   open_btn = document.getElementById('js-open-btn'),
+        overlay = document.getElementById('js-overlay'),
+        popup = document.getElementById('js-popup'),
+        close_btn = document.getElementById('js-close-btn');
 
 /* === al hacer click sobre el icon mail abre el popup ===*/
 open_btn.addEventListener('click', ()=>{
