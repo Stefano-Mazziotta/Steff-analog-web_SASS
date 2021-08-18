@@ -7,18 +7,24 @@ $hover-button-color: rgb(108, 117, 125);
 
 /* ========== Standard properties ========== */
 $bg-image-header: url(../components/images/bg_header/bg_header.jpg);
+$bg-img-header_color-section: url(../components/images/bg_header/color_section/reflejo_mdp.jpg);
 $border-radius-standard_10: 10px;
 /* ========== /end Standard properties ========== */
 
 /*  ========== clases aplicables  ========== */
 
-// gallery ---> grid area
+// index.random-photo ---> fix width vertical photo
+.fix_width_vertical {
+    width: 40%;
+}
+
+// index.gallery ---> grid area
 .vertical_uno {    grid-area: verticaluno;}
 .horizontal_uno {    grid-area: horizontaluno;}
 .horizontal_dos {    grid-area: horizontaldos;}
 .horizontal_tres {    grid-area: horizontaltres;}
 
-// ------ animations popup ------ //
+// ------ animations index.popup ------ //
 // entrada del título del popup.
 @keyframes entrada_titulo {
     from{

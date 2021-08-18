@@ -5,6 +5,10 @@
 /* ========== Standard properties ========== */
 /* ========== /end Standard properties ========== */
 /*  ========== clases aplicables  ========== */
+.fix_width_vertical {
+  width: 40%;
+}
+
 .vertical_uno {
   grid-area: verticaluno;
 }
@@ -220,7 +224,7 @@ section .random .random__container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 100px;
+  padding-bottom: 30px;
 }
 section .random .random__container .random__btn {
   font-size: 14px;
@@ -242,14 +246,13 @@ section .random .random__container .random__btn:hover {
   color: #212529;
 }
 section .random .random__container .random__img-container {
-  width: 80%;
-  border: 1px solid black;
+  width: 70%;
   border-radius: 10px;
-  padding: 10px;
 }
 section .random .random__container .random__img-container img {
   border-radius: 10px;
   width: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 section .gallery {
   padding-bottom: 150px;
