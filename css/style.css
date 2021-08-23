@@ -1,9 +1,9 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap");
 /* ========== Page colors ========== */
-/* ========== /end Page colors ========== */
+/* ========== ✓ Page colors ✓ ========== */
 /* ========== Standard properties ========== */
-/* ========== /end Standard properties ========== */
+/* ========== ✓ Standard properties ✓ ========== */
 /*  ========== clases aplicables  ========== */
 .vertical_uno {
   grid-area: verticaluno;
@@ -21,6 +21,7 @@
   grid-area: horizontaltres;
 }
 
+/*  ========== ✓ clases aplicables ✓ ========== */
 @keyframes entrada_titulo {
   from {
     transform: translateY(-50px);
@@ -42,6 +43,7 @@
   scroll-behavior: smooth;
   box-sizing: border-box;
   margin: 0;
+  text-decoration: none;
 }
 
 body {
@@ -220,7 +222,7 @@ section .random .random__container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 100px;
+  padding-bottom: 30px;
 }
 section .random .random__container .random__btn {
   font-size: 14px;
@@ -242,14 +244,13 @@ section .random .random__container .random__btn:hover {
   color: #212529;
 }
 section .random .random__container .random__img-container {
-  width: 80%;
-  border: 1px solid black;
+  width: 70%;
   border-radius: 10px;
-  padding: 10px;
 }
 section .random .random__container .random__img-container img {
   border-radius: 10px;
   width: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 section .gallery {
   padding-bottom: 150px;
@@ -316,7 +317,7 @@ section .gallery .gallery__container-all .gallery__container .container-img .tit
 section .aboutme {
   background-color: #f8f9fa;
   height: 100%;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 section .aboutme .aboutme__container-all {
   width: 80%;
@@ -352,10 +353,12 @@ section .aboutme .aboutme__container-all .aboutme__container-flex .container-img
   padding: 15px;
   border: 1px solid #212529;
   border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   transition: all 0.1s ease;
 }
 section .aboutme .aboutme__container-all .aboutme__container-flex .container-img:hover {
   border: 2px solid #212529;
+  box-shadow: none;
 }
 section .aboutme .aboutme__container-all .aboutme__container-flex .container-img img {
   width: 100%;
@@ -370,10 +373,25 @@ section .aboutme .aboutme__container-all .aboutme__text {
   text-align: center;
   line-height: 1.8em;
   margin: 0 auto;
+  margin-bottom: 50px;
   padding: 20px;
 }
 section .aboutme .aboutme__container-all .aboutme__text .light {
   font-weight: 300;
+}
+section .aboutme .aboutme__container-all .aboutme__arrow-up {
+  display: block;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  fill: #212529;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease;
+}
+section .aboutme .aboutme__container-all .aboutme__arrow-up:hover {
+  fill: #6c757d;
+  transform: translateY(-4px);
 }
 
 /*=============== ✓ Sections ✓ ===============*/
@@ -401,6 +419,7 @@ footer .footer__container-social .svg-container {
   fill: #f8f9fa;
   stroke: #f8f9fa;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 footer .footer__container-social .svg-container:hover {
   fill: #adb5bd;
@@ -495,14 +514,16 @@ footer .footer__text {
   font-size: 16px;
   letter-spacing: 1px;
   width: 80%;
-  border: 2px solid #212529;
+  border: 1px solid #212529;
   border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   padding: 10px;
   margin-bottom: 25px;
   transition: all 0.1s linear;
 }
 .overlay .popup-container .popup__form .form__input-container input:focus, .overlay .popup-container .popup__form .form__input-container textarea:focus {
-  border: 1px solid #212529;
+  box-shadow: none;
+  border: 2px solid #212529;
 }
 .overlay .popup-container .popup__form .form__input-container textarea {
   min-width: 80%;
@@ -517,8 +538,8 @@ footer .footer__text {
   padding: 10px 20px;
   background-color: #212529;
   color: #f8f9fa;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  border: 2px solid #212529;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 1px solid #212529;
   cursor: pointer;
   border-radius: 5px;
   transition: all 0.3s ease;
@@ -526,8 +547,8 @@ footer .footer__text {
   opacity: 1;
 }
 .overlay .popup-container .popup__form .form__btn:hover {
+  transform: translateY(5px);
   border: 1px solid #212529;
-  transform: translateY(7px);
   background-color: #f8f9fa;
   color: #212529;
 }

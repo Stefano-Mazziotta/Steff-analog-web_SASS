@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Analog Photography website.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <title>Steff analog web (SASS)</title>
+    <link rel="shortcut icon" href="components/favicon/favicon.ico">
+    <title>Steff analog web</title>
 </head>
 <body>
     <!--============== HEADER  ==============-->
@@ -29,9 +30,9 @@
 
                 <ul class="nav-menu">
                     <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#random__btn-id">Random Photo</a></li>
-                    <li><a href="index.html#gallery">Gallery</a></li>
-                    <li><a href="index.html#aboutme">About me</a></li>
+                    <li><a href="index.html#--js_random__btn-id">Random Photo</a></li>
+                    <li><a href="index.html#gallery_id">Gallery</a></li>
+                    <li><a href="index.html#aboutme_id">About me</a></li>
                 </ul>
             </nav>
 
@@ -57,7 +58,7 @@
         <article id="blackandwhite-or-color_id" class="bw-color">
             <div class="bw-color__container-flex" data-aos="fade-right">
                 <div class="container-img" >
-                    <a href=""><img src="components/images/elección_bw_color/vertical-color2.jpg" alt="Color image"></a>
+                    <a href="links/color_section/color_section.html"><img src="components/images/elección_bw_color/vertical-color.jpg" alt="Color image"></a>
                     <h2 class="container-img__title">Color</h2>
                 </div>
 
@@ -91,10 +92,10 @@
             </svg>
             <!-- separator -->
 
-            <div class="random__container" data-aos="fade-left">
-                <button id="random__btn-id" class="random__btn">RANDOM PHOTO</button>
-                <div class="random__img-container">
-                    <img src="components/images/random_photo/rio_color.jpg" alt="film image random photo section">
+            <div class="random__container" data-aos="fade-right">
+                <button id="--js_random__btn-id" class="random__btn">RANDOM PHOTO</button>
+                <div id="--js_fix-width" class="random__img-container">
+                    <img id="--js_random__img-id" src="components/images/random_photo/Horizontal/4.jpg" alt="film image random photo section">
                 </div>
             </div>            
         </article>
@@ -123,7 +124,7 @@
             <!-- separator -->
 
             <!-- contenedor section gallery -->
-            <div class="gallery__container-all" data-aos="fade-right">
+            <div id="gallery_id" class="gallery__container-all" data-aos="fade-right">
                 
                 <h2 class="gallery__title">Gallery</h2>
 
@@ -181,7 +182,7 @@
             </svg>
             <!-- separator -->
 
-            <div class="aboutme__container-all" data-aos="fade-left">
+            <div id="aboutme_id" class="aboutme__container-all" data-aos="fade-right">
                 <h2 class="aboutme__title">About me</h2>
 
                 <!-- images -->
@@ -201,6 +202,17 @@
                     </span>
                     <strong>A través de esta web navegarás el inmenso oceáno de mis fotografías analógicas y podrás empaparte de sentimientos inigualables.</strong>
                 </p>
+
+                <!-- arrow up -->
+                <a class="aboutme__arrow-up" href="index.html#home">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g data-name="Layer 2"><g data-name="arrowhead-up"><rect opacity="0" transform="rotate(180 12 12)"/>
+                            <path d="M6.63 11.61L12 7.29l5.37 4.48A1 1 0 0 0 18 12a1 1 0 0 0 .77-.36 1 1 0 0 0-.13-1.41l-6-5a1 1 0 0 0-1.27 0l-6 4.83a1 1 0 0 0-.15 1.41 1 1 0 0 0 1.41.14z"/>
+                            <path d="M12.64 12.23a1 1 0 0 0-1.27 0l-6 4.83a1 1 0 0 0-.15 1.41 1 1 0 0 0 1.41.15L12 14.29l5.37 4.48A1 1 0 0 0 18 19a1 1 0 0 0 .77-.36 1 1 0 0 0-.13-1.41z"/></g>
+                        </g>
+                    </svg>
+                </a>
+
             </div>
 
         </article>
@@ -214,7 +226,7 @@
         <div class="footer__container-social">
 
             <!-- youtube -->
-            <a class="svg-container" href="">
+            <a class="svg-container" href="https://www.youtube.com/channel/UCwW8MK0M7pUdcUwDTCcPgqA">
                 <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79.91 61.99">
                     <path d="M89.93,40.78a37,37,0,0,0-3.31-16.55,10.4,10.4,0,0,
                     0-6.24-4A256.89,256.89,0,0,0,50,19a257.31,257.31,0,0,0-30.28,
@@ -246,7 +258,7 @@
                 </svg>
             </a>
             <!-- contacto -->
-            <a id="js-open-btn" class="svg-container" href="index.html#footer">
+            <a id="js-open-btn" class="svg-container">
                 <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.04 61.94">
                     <path d="M18,19.06h64a7.79,7.79,0,0,1,8,7.5v45a7.79,7.79,0,0,1-8,7.49H18a7.78,7.78,0,0,
                     1-8-7.49V26.56A7.78,7.78,0,0,1,18,19.06Z" transform="translate(-9.03 -18.06)" 
@@ -260,7 +272,8 @@
         <h3 class="footer__text"> © Derechos reservados Steff analog.</h3>
     </footer>
     <!--============== ✓ Footer ✓ ==============-->
-
+    
+    <!-- overlay -->
     <div id="js-overlay" class="overlay">
         <!-- contenedor popup -->
         <div id="js-popup" class="popup-container">
@@ -293,5 +306,6 @@
     <script src="js/popup.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/aos-init.js"></script>
+    <script src="js/random-photo.js"></script>
 </body>
 </html>

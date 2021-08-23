@@ -1,4 +1,4 @@
-// styles_titlte_section($color, $font_size, $letter_spacing, $font-weight, $text_align)
+// styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
 @mixin styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align){
     color: $color;
     font-size: $font_size;

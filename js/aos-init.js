@@ -1,5 +1,7 @@
-AOS.init({
-    delay: 0,
-    duration: 1000,
-    once: true,
+window.addEventListener('load', () => {
+    AOS.init({
+        delay: 0,
+        duration: 1000,
+        once: true,
+    });
 });
