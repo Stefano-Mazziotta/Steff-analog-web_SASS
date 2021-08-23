@@ -1,14 +1,10 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap");
 /* ========== Page colors ========== */
-/* ========== /end Page colors ========== */
+/* ========== ✓ Page colors ✓ ========== */
 /* ========== Standard properties ========== */
-/* ========== /end Standard properties ========== */
+/* ========== ✓ Standard properties ✓ ========== */
 /*  ========== clases aplicables  ========== */
-.fix_width_vertical {
-  width: 40%;
-}
-
 .vertical_uno {
   grid-area: verticaluno;
 }
@@ -25,6 +21,7 @@
   grid-area: horizontaltres;
 }
 
+/*  ========== ✓ clases aplicables ✓ ========== */
 @keyframes entrada_titulo {
   from {
     transform: translateY(-50px);
@@ -46,6 +43,7 @@
   scroll-behavior: smooth;
   box-sizing: border-box;
   margin: 0;
+  text-decoration: none;
 }
 
 body {
@@ -421,6 +419,7 @@ footer .footer__container-social .svg-container {
   fill: #f8f9fa;
   stroke: #f8f9fa;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 footer .footer__container-social .svg-container:hover {
   fill: #adb5bd;
@@ -515,14 +514,16 @@ footer .footer__text {
   font-size: 16px;
   letter-spacing: 1px;
   width: 80%;
-  border: 2px solid #212529;
+  border: 1px solid #212529;
   border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   padding: 10px;
   margin-bottom: 25px;
   transition: all 0.1s linear;
 }
 .overlay .popup-container .popup__form .form__input-container input:focus, .overlay .popup-container .popup__form .form__input-container textarea:focus {
-  border: 1px solid #212529;
+  box-shadow: none;
+  border: 2px solid #212529;
 }
 .overlay .popup-container .popup__form .form__input-container textarea {
   min-width: 80%;
@@ -537,8 +538,8 @@ footer .footer__text {
   padding: 10px 20px;
   background-color: #212529;
   color: #f8f9fa;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  border: 2px solid #212529;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 1px solid #212529;
   cursor: pointer;
   border-radius: 5px;
   transition: all 0.3s ease;
@@ -546,8 +547,8 @@ footer .footer__text {
   opacity: 1;
 }
 .overlay .popup-container .popup__form .form__btn:hover {
+  transform: translateY(5px);
   border: 1px solid #212529;
-  transform: translateY(7px);
   background-color: #f8f9fa;
   color: #212529;
 }
