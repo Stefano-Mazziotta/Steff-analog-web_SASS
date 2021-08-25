@@ -16,7 +16,6 @@ $border-radius-standard_10: 10px;
 .horizontal_uno {    grid-area: horizontaluno;}
 .horizontal_dos {    grid-area: horizontaldos;}
 .horizontal_tres {    grid-area: horizontaltres;}
-
 /*  ========== ✓ clases aplicables ✓ ========== */
 
 // ------ animations index.popup ------ //
@@ -35,3 +34,4 @@ $border-radius-standard_10: 10px;
     from{opacity:0;}
     to{opacity: 1;}
 }
+// ------ ✓ animations index.popup ✓ ------ //

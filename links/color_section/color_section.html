@@ -11,11 +11,11 @@
 </head>
 <body>
     <!--=============== header ===============-->
-    <header>
+    <header id="header-home">
         <div class="header__container">
             <!-- nav -->
             <nav class="header__nav">
-                <a class="nav__logo" href="index.html#home">
+                <a class="nav__logo" href="../../index.html#home">
                     <svg class="nav__svg-35mmfilm" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.13 60.13">
                         <rect width="60.13" height="60.13" style="fill-opacity:0;"/>
                         <path d="M65.54,27.24H34.17a6.87,6.87,0,0,0-6.86,6.87V65.48a6.86,6.86,0,0,0,6.86,
@@ -38,7 +38,7 @@
             <div class="header__elements-container">
                 <a class="elements__title" href="color_section.html#gallery-id">
                     <h2 class="title-one">Color</h2>
-                    <h3 class="title-two">Photography ⤵</h3>
+                    <h3 class="title-two">Photography ↓</h3>
                 </a>
                 <a href="" class="elements__black-white">
                     <h3>Black & White</h3>
@@ -50,16 +50,12 @@
     <!--=============== ✓ header ✓ ===============-->
 
     <!--=============== sections ===============-->
-
-    <!-- scroll-up -->
-
     <!--===== Gallery =====-->
     <section>
-
         <div class="gallery__container">
 
             <!-- item 1 - naranajas -->
-            <article id="gallery-id" class="gallery__item" data-aos="fade-right">
+            <article id="gallery-id" class="gallery__item" data-aos="fade-up">
                 <div class="item__img-container">
                     <img src="components/images/gallery/1_naranjas.jpg" alt="">
                 </div>
@@ -71,7 +67,7 @@
             </article>
 
             <!-- item 2 - pescador -->
-            <article class="gallery__item" data-aos="fade-left">
+            <article class="gallery__item" data-aos="fade-up">
                 <div class="item__img-container order-two">
                     <img src="components/images/gallery/2_pescador.jpg" alt="">
                 </div>
@@ -83,7 +79,7 @@
             </article>
 
             <!-- item 3 - park -->
-            <article class="gallery__item" data-aos="fade-right">
+            <article class="gallery__item" data-aos="fade-up">
                 <div class="item__img-container">
                     <img src="components/images/gallery/3_park.jpg" alt="">
                 </div>
@@ -95,7 +91,7 @@
             </article>
 
             <!-- item 4 - flores -->
-            <article class="gallery__item" data-aos="fade-left">
+            <article class="gallery__item" data-aos="fade-up">
                 <div class="item__img-container order-two">
                     <img src="components/images/gallery/4_flores.jpg" alt="">
                 </div>
@@ -107,7 +103,7 @@
             </article>
 
             <!-- item 5 - golf -->
-            <article class="gallery__item" data-aos="fade-right">
+            <article class="gallery__item" data-aos="fade-up">
                 <div class="item__img-container">
                     <img src="../../components/images/random_photo/vertical/3.jpg" alt="">
                 </div>
@@ -119,7 +115,7 @@
             </article>
 
             <!-- item 6 - balcón -->
-            <article class="gallery__item" data-aos="fade-left">
+            <article class="gallery__item" data-aos="fade-up">
                 <div class="item__img-container order-two">
                     <img src="components/images/gallery/6_cuadro.jpg" alt="">
                 </div>
@@ -131,19 +127,19 @@
             </article>
 
             <!-- item 7 - terraza costa Rosario -->
-            <article class="gallery__item " data-aos="fade-right">
+            <article class="gallery__item " data-aos="fade-up">
                 <div class="item__img-container">
                     <img src="components/images/gallery/7_terraza-costa.jpg" alt="">
                 </div>
                 <div class="item__text-container">
                     <h3 class="text__place blue">ROSARIO, ARGENTINA.</h3>
                     <p class="text__camera"><span class="camera-icon">📷</span> Minolta Hi-Matic 7s.</p>
-                    <p class="text__film"><span class="film-icon">🎞️</span> Kodak ultramax 400 (vencido 2006).</p>
+                    <p class="text__film"><span class="film-icon">🎞️</span> Kodak ultramax 400.</p>
                 </div>
             </article>  
             
             <!-- item 8 - Terraza monumento -->
-            <article class="gallery__item" data-aos="fade-left">
+            <article class="gallery__item" data-aos="fade-up">
                 <div class="item__img-container order-two">
                     <img src="components/images/gallery/8_terraza-monumento.JPG" alt="">
                 </div>
@@ -155,7 +151,7 @@
             </article>
 
             <!-- item 9 - caballo champa -->
-            <article class="gallery__item " data-aos="fade-right">
+            <article class="gallery__item " data-aos="fade-up">
                 <div class="item__img-container">
                     <img src="components/images/gallery/9_caballo-champa.JPG" alt="">
                 </div>
@@ -167,7 +163,7 @@
             </article>
 
             <!-- item 10 - Santa rita -->
-            <article class="gallery__item" data-aos="fade-left">
+            <article class="gallery__item" data-aos="fade-up">
                 <div class="item__img-container order-two">
                     <img src="components/images/gallery/10_santarita.JPG" alt="">
                 </div>
@@ -177,6 +173,18 @@
                     <p class="text__film"><span class="film-icon">🎞️</span> Kodak proimage 100.</p>
                 </div>
             </article>
+        </div>
+
+        <!-- hidden scroll-up -->
+        <div id="--js_scroll-up__container" class="scroll-up__container">
+            <a class="scroll-up__element" href="color_section.html#header-home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g data-name="Layer 2"><g data-name="arrowhead-up"><rect opacity="0" transform="rotate(180 12 12)"/>
+                        <path d="M6.63 11.61L12 7.29l5.37 4.48A1 1 0 0 0 18 12a1 1 0 0 0 .77-.36 1 1 0 0 0-.13-1.41l-6-5a1 1 0 0 0-1.27 0l-6 4.83a1 1 0 0 0-.15 1.41 1 1 0 0 0 1.41.14z"/>
+                        <path d="M12.64 12.23a1 1 0 0 0-1.27 0l-6 4.83a1 1 0 0 0-.15 1.41 1 1 0 0 0 1.41.15L12 14.29l5.37 4.48A1 1 0 0 0 18 19a1 1 0 0 0 .77-.36 1 1 0 0 0-.13-1.41z"/></g>
+                    </g>
+                </svg>
+            </a>
         </div>
     </section>
     <!--=============== ✓ sections ✓ ===============-->
@@ -264,6 +272,7 @@
     </div>
 
     <!--=============== Scripts ===============-->
+    <script src="js/scroll-up.js"></script>
     <script src="../../js/popup.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="../../js/aos-init.js"></script>

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap');
 @import "../../../sass/variables.scss";
 @import "../../../sass/mixins.scss";
+@import "color_section_animations.scss";
 
 * {
     scroll-behavior: smooth;
@@ -188,6 +189,7 @@ header {
 
 /*=============== Sections ===============*/
 section{
+    position: relative;
     /*===== Gallery ===== */
     .gallery__container{
         width: 80%;
@@ -196,6 +198,8 @@ section{
         // item 1 hasta 10 - vertical. //
         .gallery__item{
             width: 100%;
+            position: relative;
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -211,6 +215,7 @@ section{
                 transition: all .6s ease;
                 &:hover{
                     transform: scale(1.1);
+                    box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 38px, rgba(0, 0, 0, 0.22) 0px 5px 12px;
                 }
                 img{
                     width: 100%;
@@ -228,15 +233,15 @@ section{
                 }
                 .text__camera, .text__film{
                     // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
-                    @include styles_text($principal-color-black, 16px, 1px, 400, center);
+                    @include styles_text($principal-color-black, 16px, 1px, 400, left);
                     .film-icon,.camera-icon{
                         font-size: 24px;
                     }
                 }
             }
         }
-        // ---------- colores text_place ---------- //
-        
+
+        // ---------- colores text_place ---------- //        
         //--- color amarillo - item 2 --- //
         .gallery__item{
             // fix position img
@@ -295,7 +300,45 @@ section{
         }
     }
     /* ===== ✓ Gallery ✓ ===== */
-}   
+    
+    // element --> scroll up
+    
+    .scroll-up__container{
+        width: 50px;
+        height: 50px;
+        background-color: $principal-color-black;
+        border-radius: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: 2%;
+        margin-bottom: 2%;        
+        
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        
+        opacity: 0;
+        .scroll-up__element{
+            fill: $principal-color-white;
+
+            transition: fill .3s ease, transform .3s ease;
+            &:hover{
+                fill: $hover-button-color;
+                transform: translateY(-1px);
+            }
+            svg{
+                width: 40px;
+                height: 40px;
+            }        
+        }
+    }
+    .active{
+        animation: entrada_scroll-up .6s ease 0s forwards;
+    }
+}
 /*=============== ✓ Sections ✓ ===============*/
 
 /*=============== Footer ===============*/
@@ -465,7 +508,7 @@ footer{
                 font-weight: 500;
                 letter-spacing: 1.5px;
 
-                padding: 10px 20px;
+                padding: 10px 30px;
                 background-color: $principal-color-black;
                 color: $principal-color-white;
                 box-shadow: rgba(50, 50, 93, 0.25) 
@@ -518,6 +561,29 @@ footer{
             }
         }
     }
+    // --- fix size gallery ---
+    section{
+        .gallery__container{
+            .gallery__item{
+                .item__img-container{
+                    width: 40%;
+                }
+            }
+        }
+    }
+    // --- fix width social icons footer ---
+    footer{
+        .footer__container-social{
+            width: 60%;
+        }
+    }
+    // --- fix size popup ---
+    .overlay{
+        .popup-container{
+            width: 60%;
+        }
+    }
+
 }
 
 @media (max-width: 890px){
@@ -539,11 +605,50 @@ footer{
             }
         }
     }
+    // --- fix size & direction gallery ---
+    section{
+        .gallery__container{
+            .gallery__item{
+                flex-direction: column;
+                margin-bottom: 75px;
+
+                .item__img-container{
+                    width: 55%;
+                    margin-bottom: 50px;
+                }
+                .item__text-container{
+                    margin-left: 0;
+                    .text__place{
+                        font-size: 22px;
+                        letter-spacing: 1px;
+                        margin-bottom: 10px;
+                    }
+                    .text__camera, .text__film{
+                        text-align: center;
+                        .film-icon, .camera-icon{
+                            font-size: 18px;
+                        }
+                    }
+                }
+                .order-two{
+                    order: 0;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    // --- fix size social icons footer ---
+    footer{
+        .footer__container-social{
+            width: 70%;
+        }
+    }
+
 }
 
 // tablet
 @media (max-width: 768px){
-    // --- fix header ---
+    // --- fix header --- //
     header{
         .header__container{
 
@@ -577,7 +682,74 @@ footer{
             }
         }
     }
+    // --- fix size img gallery --- //
+    section{
+        .gallery__container{
+            .gallery__item{
+                .item__img-container{
+                    width: 65%;
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+    // --- fix size social icons footer --- //
+    footer{
+        .footer__container-social{
+            width: 80%;
+            .svg-container{
+                width: 40px;
+            }
+        }
+    }
+    // --- fix size popup --- //
+    .overlay{
+        .popup-container{
+            width: 80%;
+        }
+    }
 
+}
+
+@media (max-width: 425px){
+    // --- fix size gallery --- //
+    section{
+        .gallery__container{
+            .gallery__item{
+
+                .item__img-container{
+                    width: 100%;
+                }
+                .item__text-container{
+                    .text__place{
+                        font-size: 18px;
+                    }
+                    .text__camera, .text__film{
+                        margin-bottom: 5px;
+                        .film-icon, .camera-icon{
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // --- fix size social icons footer ---
+    footer{
+        .footer__container-social{
+            width: 90%;
+        }
+        .footer__text{
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+    }
+    // --- fix size popup --- //
+    .overlay{
+        .popup-container{
+            width: 95%;
+        }
+    }
 }
 
 @media (max-width: 360px){
@@ -594,5 +766,4 @@ footer{
 
     }
 }
-
 /* =============== ✓ Responsive ✓ =============== */
