@@ -1,41 +1,54 @@
 /* --------- Functions --------- */
 /*
-vertical_or_horizontal() -> String
+rndm_vertical_or_horizontal() -> String
 Devuelve "vertical" u "horizontal" aleatoriamente.   */
 function rndm_vertical_or_horizontal(){
     const   MIN = 1,
             MAX = 2;
-            MAX_WIDTH = 840;
-            MIN_WIDTH = 500;
             CONTAINER_IMG = document.getElementById('--js_fix-width');
-    let randomNumber, widthWindow;
+    let randomNumber;
 
     randomNumber = Math.floor(Math.random() * ((MAX + 1) - MIN) + MIN);
-    widthWindow = screen.width;
 
     if ( randomNumber == 1 ) {
-        if (widthWindow <= MAX_WIDTH){
+        return 'Horizontal';
+    } else if ( randomNumber == 2 ) {        
+        return 'Vertical';
+    }
+};
+/*
+responsive_width(orientation) -> DOM - width size responsive
+Modifica el width del contenedor de la imágen según la pantalla del dispositivo. */
+function responsive_width(orientation){
+    MAX_WIDTH = 840;
+    MIN_WIDTH = 500;
+    let widthWindow;
+    widthWindow = screen.width;
+
+    if (orientation == "Vertical"){
+        if (widthWindow < MIN_WIDTH){
             CONTAINER_IMG.removeAttribute("style");
             CONTAINER_IMG.style.width = '100%';
-        } else {
-            CONTAINER_IMG.removeAttribute("style");
-            CONTAINER_IMG.style.width = '70%';
-        }
-        return 'Horizontal';
-    } else if ( randomNumber == 2 ) {
-        if (widthWindow >= MIN_WIDTH && widthWindow <= MAX_WIDTH){
+
+        } else if (widthWindow >= MIN_WIDTH && widthWindow <= MAX_WIDTH){
             CONTAINER_IMG.removeAttribute("style");
             CONTAINER_IMG.style.width = '65%';
-        } else if (widthWindow < MIN_WIDTH){
-            CONTAINER_IMG.removeAttribute("style");
-            CONTAINER_IMG.style.width = '100%';
+
         } else {
             CONTAINER_IMG.removeAttribute("style");
             CONTAINER_IMG.style.width = '30%';
         }
-        return 'Vertical';
+    } else if (orientation == "Horizontal"){
+        if (widthWindow <= MAX_WIDTH){
+            CONTAINER_IMG.removeAttribute("style");
+            CONTAINER_IMG.style.width = '100%';
+        } else {
+            
+            CONTAINER_IMG.style.width = '70%';
+        }
     }
-};
+}
+
 
 /*
 rndm_generate() -> number
@@ -44,7 +57,7 @@ function rndm_generate() {
     let cantidadImages, randomNumber;
     const MINIMO = 1;
     
-    cantidadImages = 5;
+    cantidadImages = 26;
 
     randomNumber = Math.floor(Math.random() * ((cantidadImages + 1) - MINIMO) + MINIMO);
     return randomNumber;
@@ -93,9 +106,11 @@ window.addEventListener('load', ()=>{
         // Creo new_src a partir de los valores random.
         new_src = `components/images/random_photo/${orientation}/${randomNum}.jpg`;
         // Verifico si new_src está en src HTML.
-        new_src = repeat_validator(new_src)
+        new_src = repeat_validator(new_src);
         IMAGE.src = new_src;
+        // Modifico el width de la image según widthscreen.
+        responsive_width(orientation);
     };
-})
+});
 
 
