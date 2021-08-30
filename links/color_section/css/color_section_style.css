@@ -59,6 +59,48 @@ body {
   background-color: #f8f9fa;
 }
 
+/*=============== preloader ===============*/
+body .preloader {
+  width: 100%;
+  height: 100vh;
+  background-color: #212529;
+  z-index: 100;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .preloader .preloader__elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+body .preloader .preloader__elements .preloader__svg-diafragma {
+  width: 100px;
+  height: 100px;
+  fill: #f8f9fa;
+  animation: loading_effect 3s infinite;
+}
+@keyframes loading_effect {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body .preloader .preloader__elements .preloader__title {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #f8f9fa;
+  margin-left: 10px;
+}
+
+/*=============== ✓ preloader ✓ ===============*/
 /*=============== HEADER ===============*/
 header {
   width: 100%;
@@ -271,36 +313,6 @@ section .gallery__container .gallery__item .order-two {
 }
 section .gallery__container .gallery__item .fix-margin {
   margin: 0;
-}
-section .scroll-up__container {
-  width: 50px;
-  height: 50px;
-  background-color: #212529;
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 2%;
-  margin-bottom: 2%;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-}
-section .scroll-up__container .scroll-up__element {
-  fill: #f8f9fa;
-  transition: fill 0.3s ease, transform 0.3s ease;
-}
-section .scroll-up__container .scroll-up__element:hover {
-  fill: #6c757d;
-  transform: translateY(-1px);
-}
-section .scroll-up__container .scroll-up__element svg {
-  width: 40px;
-  height: 40px;
-}
-section .active {
-  animation: entrada_scroll-up 0.6s ease 0s forwards;
 }
 section .scroll-up__container {
   width: 50px;
