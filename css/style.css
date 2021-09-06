@@ -321,7 +321,7 @@ section .gallery .gallery__container-all .gallery__title {
 section .gallery .gallery__container-all .gallery__container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 40%);
+  grid-template-columns: repeat(2, 35%);
   grid-template-rows: auto auto auto;
   justify-content: center;
   grid-template-areas: "verticaluno   horizontaluno" "verticaluno    horizontaldos" "horizontaltres   horizontaltres";
@@ -332,7 +332,8 @@ section .gallery .gallery__container-all .gallery__container .container-img {
   justify-content: center;
   align-content: center;
   position: relative;
-  border: 1px solid #f8f9fa;
+  border-top: 1px solid #f8f9fa;
+  border-bottom: 1px solid #f8f9fa;
   padding: 10px;
   border-radius: 20px;
   opacity: 0.8;
@@ -341,7 +342,8 @@ section .gallery .gallery__container-all .gallery__container .container-img {
 }
 section .gallery .gallery__container-all .gallery__container .container-img:hover {
   opacity: 1;
-  border: 2px solid #f8f9fa;
+  border-top: 2px solid #f8f9fa;
+  border-bottom: 2px solid #f8f9fa;
 }
 section .gallery .gallery__container-all .gallery__container .container-img img {
   width: 100%;
@@ -466,7 +468,7 @@ section .aboutme .aboutme__container-all .aboutme__arrow-up:hover {
   transform: translateY(-4px);
 }
 
-/*=============== ✓ Sections ✓ ===============*/
+/*=============== (:Sections:) ===============*/
 /*=============== Footer ===============*/
 footer {
   height: 200px;
@@ -629,7 +631,7 @@ footer .footer__text {
   transform: scale(1);
 }
 
-/*=============== ✓ Footer ✓ ===============*/
+/*=============== (:Footer:) ===============*/
 /*=============== Responsive ===============*/
 @media (max-width: 1270px) {
   header {
@@ -674,7 +676,7 @@ footer .footer__text {
     width: 50%;
   }
   section .gallery .gallery__container-all .gallery__container {
-    grid-template-columns: 90%;
+    grid-template-columns: 95%;
     grid-template-rows: auto auto auto auto;
     grid-template-areas: "verticaluno" "horizontaluno" "horizontaldos" "horizontaltres";
     gap: 50px 0px;
@@ -770,7 +772,7 @@ footer .footer__text {
     content: url(../components/images/gallery/Vertical/Responsive/rosario-responsive.jpg);
   }
   section .gallery .gallery__container-all .gallery__container .container-img .tres {
-    content: url(../components/images/gallery/Vertical/Responsive/street2-responsive.jpg);
+    content: url(../components/images/gallery/Vertical/Responsive/mardelplata-responsive.jpg);
   }
   section .aboutme .aboutme__container-all .aboutme__title {
     font-size: 36px;
@@ -833,6 +835,6 @@ footer .footer__text {
     max-width: 90%;
   }
 }
-/*=============== ✓ Responsive ✓ ===============*/
+/*=============== (:Responsive:) ===============*/
 
 /*# sourceMappingURL=style.css.map */

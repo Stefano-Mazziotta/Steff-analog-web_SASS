@@ -328,7 +328,7 @@ section {
                 width: 100%;
 
                 display: grid;
-                grid-template-columns: repeat(2,40%);
+                grid-template-columns: repeat(2,35%);
                 grid-template-rows: auto auto auto;
                 justify-content: center;
 
@@ -344,7 +344,8 @@ section {
                     align-content: center;
                     position: relative;
                     
-                    border: 1px solid $principal-color-white;
+                    border-top: 1px solid $principal-color-white;
+                    border-bottom: 1px solid $principal-color-white;
                     padding: 10px;
                     border-radius: 20px;
                     opacity: .8;
@@ -353,7 +354,8 @@ section {
                     cursor: pointer;                
                     &:hover{
                         opacity: 1;
-                        border: 2px solid $principal-color-white;
+                        border-top: 2px solid $principal-color-white;
+                        border-bottom: 2px solid $principal-color-white;
                     } 
 
                     img {
@@ -375,7 +377,7 @@ section {
             }    
         }    
     }
-    // ---------- ✓ Gallery ✓ ---------- //
+    // ---------- (:Gallery:) ---------- //
 
     // ---------- aboutme ---------- //
     .aboutme{
@@ -506,9 +508,9 @@ section {
             }
         }
     }
-    // ---------- ✓ aboutme ✓ ---------- //
+    // ---------- (:aboutme:) ---------- //
 }
-/*=============== ✓ Sections ✓ ===============*/
+/*=============== (:Sections:) ===============*/
 
 /*=============== Footer ===============*/
 footer{
@@ -708,8 +710,8 @@ footer{
         transform: scale(1);
     }
 }
-// --- ✓ Popup contact styles. ✓ --- //
-/*=============== ✓ Footer ✓ ===============*/
+// --- (:Popup contact styles.:) --- //
+/*=============== (:Footer:) ===============*/
 
 /*=============== Responsive ===============*/
 @media (max-width: 1270px){
@@ -795,7 +797,7 @@ footer{
         .gallery{
             .gallery__container-all{
                 .gallery__container{
-                        grid-template-columns: 90%;
+                        grid-template-columns: 95%;
                         grid-template-rows: auto auto auto auto;
                         grid-template-areas:    "verticaluno"
                                                 "horizontaluno"
@@ -962,7 +964,7 @@ footer{
                     .container-img {
                         .uno {content: url(../components/images/gallery/Vertical/Responsive/Champaqui-responsive.JPG);}
                         .dos {content: url(../components/images/gallery/Vertical/Responsive/rosario-responsive.jpg);}
-                        .tres {content: url(../components/images/gallery/Vertical/Responsive/street2-responsive.jpg);}
+                        .tres {content: url(../components/images/gallery/Vertical/Responsive/mardelplata-responsive.jpg);}
                     }
                 }
             }
@@ -1097,4 +1099,4 @@ footer{
     }
     // ✓ popup size repaired ✓ //
 }
-/*=============== ✓ Responsive ✓ ===============*/
+/*=============== (:Responsive:) ===============*/
