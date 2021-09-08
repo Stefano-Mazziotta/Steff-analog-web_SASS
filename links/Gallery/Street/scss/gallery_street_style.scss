@@ -10,7 +10,7 @@
 }
 
 body{
-    background-color: $principal-color-white;
+    background-color: $principal-color-black;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -22,7 +22,6 @@ header {
     background-repeat: no-repeat;
     background-attachment:scroll;
     background-size:cover;
-    margin-bottom:100px ;
 
     .header__container{
         width: 80%;
@@ -189,51 +188,165 @@ header {
 }
 /*=============== (:HEADER:) ===============*/
 
+/*=============== GALLERY.STREET ===============*/
 .gallery{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 
+    //--- horizontal gallery container ---//
     .gallery__horizontal{
-        width: 100%;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
         
-        .swiper{
-            width: 70%;
-            height: 650px;
-            border-radius: 5px;
+        // title & subtitle gallery.
+        .horizontal__title{
+            margin-top: 50px;
+            margin-bottom: 25px;
+            padding-left: 10px;
+            padding-right: 10px;
+            
+            font-size:64px;
+            color: $principal-color-white;
+            letter-spacing: 1px;
+        }
+        .horizontal__subtitle{
+            width: 100%;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            padding-left: 10px;
+            padding-right: 10px;
+           
+            font-weight: 300;
+            font-size: 24px;
+            color: $principal-color-white;
+            line-height: 50px;
 
-            .swiper-slide{
-                background-color: #ccc;
-                font-size: 60px;
+            border-bottom: 1px solid $principal-color-white;
+            border-radius: 10px;
+        }
+        //btn's translate
+        .horizontal__btn-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            margin-bottom: 125px;
+            .btn-language{
+                border: none;
+                cursor: pointer;
                 
-                .slide__img{
-                    width: 100%;
-                }
-            }
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                
+                background-color: $principal-color-white;
+                color: $principal-color-black;
+                font-weight: 800;
+                text-align: center;
+                font-size: 18px;
 
-            .swiper-pagination{
-                --swiper-theme-color: #afef20;
-            }
-            .swiper-button-prev{
-                --swiper-theme-color: #afef20;
                 transition: all .3s ease;
                 &:hover{
-                    transform:translateX(-5px);
+                    box-shadow: none;
+                    background-color: $hover-button-color;
                 }
             }
-            .swiper-button-next{
-                --swiper-theme-color: #afef20;
-                transition: all .3s ease;
-                &:hover{
-                    transform:translateX(5px);
-                }
+            .btn-language.active{
+                background-color: $hover-button-color;
+                color: $principal-color-white;
+                cursor: default;
             }
         }
+
+        //swiper container    
+        .swiper-container-padding{
+            background-color: $principal-color-white;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+
+            .swiper{
+                display: flex;
+                width: 100%;
+                background-color: $principal-color-white;
+    
+                .swiper-wrapper{
+                    .swiper-slide{
+                        font-size: 60px;        
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        
+                        .slide__img{
+                            border-radius: 5px;
+                            width: 100%;
+                        }
+                        &:hover{cursor: grab;}
+                        &:active{cursor: grabbing;}
+                    }
+                }
+                .swiper-pagination{
+                    --swiper-theme-color: #667EEA;
+                }
+            }
+
+        }
+        
+        .feature-container{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 200px;
+        
+            .feature__svg{
+                width: 25px;
+                height: 25px;
+            }
+            .feature__txt{
+                // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
+                @include styles_text($principal-color-white, 21px, .5px, 500, left);  
+                margin-left: 10px             
+            }
+        } 
     }
+
+    //--- vertical gallery container ---//
+    .gallery__vertical{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+
+        .vertical__container{
+            width: 100%;
+            
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .vertical__components{
+                width: 45%;
+                .components__img-container{
+                    background-color: $principal-color-white;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    img{
+                        border-radius: 5px;
+                        width: 100%;
+                    }
+                }
+            }
+
+            
+        }
+    }
+
 }
+/*=============== (:GALLERY.STREET:) ===============*/
 
 
 
@@ -241,7 +354,7 @@ header {
 
 /* =============== Responsive =============== */
 @media (max-width: 1280px){
-    // --- fix header ---
+    // --- fix header --- //
     header{
         .header__container{
             .header__nav{
@@ -256,6 +369,13 @@ header {
                     justify-content: center;
                 }
             }
+        }
+    }
+    
+    .gallery{
+        // --- fix horizontal gallery --- //
+        .gallery__horizontal{
+            width: 70%;
         }
     }
 }
@@ -277,6 +397,12 @@ header {
             .header__black-white{
                 left: 70%;
             }
+        }
+    }
+    // --- fix horizontal gallery --- //
+    .gallery{
+        .gallery__horizontal{
+            width: 80%;
         }
     }
 }
@@ -317,9 +443,46 @@ header {
             }
         }
     }
+    
+    .gallery{
+        // --- fix horizontal gallery --- //
+        .gallery__horizontal{
+            width: 85%;
+
+            .horizontal__title{
+                font-size: 54px;
+            }
+            .horizontal__subtitle{
+                font-size: 21px;
+            }
+        }
+    }
 }
 
 @media (max-width: 425px){
+    
+    .gallery{
+        // --- fix horizontal gallery --- //
+        .gallery__horizontal{
+            width: 90%;
+
+            .swiper-container-padding{
+                padding: 5px;
+                margin-bottom: 15px;
+            }
+
+            .feature-container{
+                justify-content: center;
+                .feature__svg{
+                    width: 25px;
+                    height: 20px;
+                }
+                .feature__txt{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 360px){
