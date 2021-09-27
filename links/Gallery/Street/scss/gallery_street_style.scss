@@ -76,7 +76,7 @@ header {
         .header__nav{
             width: 100%;
             padding: 25px 0;
-            margin-bottom: 70vh;
+            margin-bottom: 45vh;
 
             display: flex;
             flex-direction: row;
@@ -148,11 +148,12 @@ header {
 
         .header__elements-container{
             width: 80%;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
             
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
 
             // color photography text
@@ -160,6 +161,7 @@ header {
                 display: flex;
                 flex-direction: column;
                 padding: 10px 30px;
+                margin-bottom: 25px;
 
                 color: $principal-color-white;
                 text-decoration: none;
@@ -225,6 +227,35 @@ header {
                     font-size: 14px;
                     font-weight: 500;
                     letter-spacing: .5px;
+                }
+            }
+        }
+        .elements__arrowdown-container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .elements__arrow-down{
+
+                width: 50px;    
+                margin-left: 15px;
+                fill: $principal-color-white;
+    
+                animation: respiracion 4s infinite;
+                @keyframes respiracion {
+                    0%{
+                        transform: translateY(0px);
+                    }
+                    50%{
+                        transform: translateY(-10px);
+                    }
+                    100%{
+                        transform: translateY(0px);
+                    }
+                }
+                transition: fill .3s ease;
+                &:hover{
+                    fill: $hover-header-color;
                 }
             }
         }
@@ -675,7 +706,7 @@ footer{
         .header__container{
             .header__nav{
                 flex-direction: column;
-                margin-bottom: 60vh;
+                margin-bottom: 35vh;
                 
                 .nav__logo{
                     width: 100%;
@@ -759,7 +790,7 @@ footer{
         .header__container{
 
             .header__nav{
-                margin-bottom: 30vh;
+                margin-bottom: 5vh;
 
                 .nav__logo{
                     justify-content: flex-start;
@@ -901,7 +932,7 @@ footer{
     header{
         .header__container{
             .header__nav{
-                margin-bottom: 12vh;
+                margin-bottom: 5vh;
                 .nav__logo{
                     letter-spacing: 1.5px;
                     .nav__title{font-size: 24px;}

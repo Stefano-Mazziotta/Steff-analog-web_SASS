@@ -165,7 +165,7 @@ header .header__container {
 header .header__container .header__nav {
   width: 100%;
   padding: 25px 0;
-  margin-bottom: 55vh;
+  margin-bottom: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -249,23 +249,23 @@ header .header__container .header__nav .nav__menu a:hover {
   border-radius: 5px;
 }
 header .header__container .header__elements-container {
-  width: 80%;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 header .header__container .header__elements-container .elements__title-container {
   border-radius: 5px;
@@ -368,9 +368,9 @@ header .header__container .elements__arrowdown-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 header .header__container .elements__arrowdown-container .elements__arrow-down {
   width: 50px;
@@ -912,11 +912,6 @@ footer .footer__text {
   }
   header .header__container .header__elements-container .elements__title-container .elements__title {
     margin-bottom: 10px;
-  }
-  header .header__container .elements__arrowdown-container {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
 
   .gallery .gallery__horizontal {
