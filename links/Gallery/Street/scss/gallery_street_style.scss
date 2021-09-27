@@ -7,12 +7,56 @@
     box-sizing: border-box;
     margin: 0;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body{
     background-color: $principal-color-black;
-    font-family: 'Montserrat', sans-serif;
 }
+
+/*=============== preloader ===============*/
+body{
+    .preloader{
+        width: 100%;
+        height: 100vh;
+        background-color: $principal-color-black;
+        z-index: 100;
+        position: fixed;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .preloader__elements{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            .preloader__svg-diafragma{
+                width: 100px;
+                height: 100px;
+                fill: $principal-color-white;
+
+                animation: loading_effect 3s infinite;
+            }
+            @keyframes loading_effect {
+                from{transform: rotate(0deg);}
+                to{transform: rotate(360deg);}
+            }
+            .preloader__title{
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: 1px;
+                color: $principal-color-white;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+/*=============== ✓ preloader ✓ ===============*/
 
 /*=============== HEADER ===============*/
 header {
@@ -263,7 +307,7 @@ header {
 
         //swiper container    
         .swiper-container-padding{
-            background-color: $principal-color-white;
+            background-color: rgba($hover-button-color,.2);
             border-radius: 5px;
             padding: 15px;
             margin-bottom: 10px;
@@ -271,11 +315,10 @@ header {
             .swiper{
                 display: flex;
                 width: 100%;
-                background-color: $principal-color-white;
+                background-color: rgba($hover-button-color,.0);
     
                 .swiper-wrapper{
-                    .swiper-slide{
-                        font-size: 60px;        
+                    .swiper-slide{      
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -283,7 +326,7 @@ header {
                         
                         .slide__img{
                             border-radius: 5px;
-                            width: 100%;
+                            width: 99.5%;
                         }
                         &:hover{cursor: grab;}
                         &:active{cursor: grabbing;}
@@ -322,6 +365,7 @@ header {
 
         .vertical__container{
             width: 100%;
+            margin-bottom: 200px;
             
             display: flex;
             flex-direction: row;
@@ -330,13 +374,37 @@ header {
 
             .vertical__components{
                 width: 45%;
+                
                 .components__img-container{
-                    background-color: $principal-color-white;
-                    padding: 10px 15px;
+                    background-color: rgba($hover-button-color,.2);
+                    padding: 10px 10px;
+                    margin-bottom: 10px;
                     border-radius: 5px;
                     img{
-                        border-radius: 5px;
                         width: 100%;
+                        border-radius: 5px;
+                        vertical-align: top;
+                    }
+                }
+
+                .components__feature-container{
+                    width: 100%;
+
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+
+                    .feature__svg{
+                        width: 20px;
+                        height: 20px;
+                    }
+                    .feature__txt{
+                        margin-left: 10px;
+                        // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
+                        @include styles_text($principal-color-white, 18px, .5px, 500, left); 
+                        
                     }
                 }
             }
@@ -345,8 +413,256 @@ header {
         }
     }
 
+    // element --> scroll up
+    
+    .scroll-up__container{
+        width: 50px;
+        height: 50px;
+        background-color: $principal-color-white;
+        border-radius: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: 2%;
+        margin-bottom: 2%;        
+        
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 1000;
+        
+        opacity: 0;
+        .scroll-up__element{
+            fill: $principal-color-black;
+
+            transition: fill .3s ease, transform .3s ease;
+            &:hover{
+                fill: $hover-button-color;
+                transform: translateY(-1px);
+            }
+            svg{
+                width: 40px;
+                height: 40px;
+            }        
+        }
+    }
+    .active{
+        animation: entrada_scroll-up .6s ease 0s forwards;
+    }
+    // animation entrada_scroll-up
+    @keyframes entrada_scroll-up{
+        from{opacity: 0;}
+        to{
+            opacity: 1;
+        }
+    }
+
 }
 /*=============== (:GALLERY.STREET:) ===============*/
+
+/*=============== Footer ===============*/
+footer{
+    height: 300px;
+    background-color: rgba($hover-button-color,.2);
+    // contenedor redes sociales //
+    .footer__container-social{
+        width: 50%;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        border-bottom: 2px solid $principal-color-white;
+        border-radius: 20px;
+        padding-bottom: 20px;
+        padding-top: 100px;
+
+        .svg-container{
+            width: 50px;
+            display: block;
+
+            fill: $principal-color-white;
+            stroke: $principal-color-white;
+            cursor: pointer;
+            
+            transition: all .3s ease;
+            &:hover{
+                fill: $hover-header-color;
+                stroke: $hover-header-color;
+                transform: scale(1.1);
+            }    
+        }
+    }
+    .footer__text{
+        // mixin ->
+        // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
+        @include styles_text($principal-color-white, 16px, 1.5px, 500, center);
+    }    
+}
+
+// --- Popup contact styles. --- //
+.overlay{
+    background-color: rgb(0,0,0,.5);
+    z-index: 1000;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    visibility: hidden;
+    &.active{
+        visibility: visible;
+    }
+
+    // popup styles //
+    .popup-container{
+        position: relative;
+        text-align: center;
+        width: 40%;
+        min-height: 500px;
+        z-index: 1000;
+
+        background-color: $principal-color-white;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        padding: 50px 0px 10px 0px;
+        border-radius: 10px;
+
+        opacity: 0;
+        transition: all .3s ease;
+        transform: scale(.7);
+        
+
+        // popup cross close styles. //
+        .popup__cross--close{
+            display: block;
+            cursor: pointer;
+
+            fill: $principal-color-black;
+            transition: fill .3s ease;
+            &:hover{
+                fill: #d00000;
+            }
+            svg {
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                top: 3%;
+                right: 3%;
+            }
+        }
+        
+        // popup title styles. //
+        .popup__title{
+            // mixin ->
+            // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
+            @include styles_text($principal-color-white, 24px, 1.5px, 500, center);
+
+            background-color: $principal-color-black;
+            text-transform: uppercase;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-bottom: 50px;
+
+            opacity: 0;
+            animation: entrada_titulo .8s ease forwards;
+        }
+
+        // popup form styles. //
+        .popup__form{
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            opacity: 0;
+            animation: entrada_inputs .8s ease .6 forwards;
+
+            // popup inputs container. //
+            .form__input-container{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                // popup input and textarea styles. //
+                input,textarea{
+                    outline: none;
+                    text-align: center;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    width: 80%;
+
+                    border: 1px solid $principal-color-black;
+                    border-radius: 10px;
+                    box-shadow: rgba(50, 50, 93, 0.25) 
+                    0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+                    
+                    padding: 10px;
+                    margin-bottom: 25px;
+
+                    transition: all .1s linear;
+                    &:focus{
+                        box-shadow: none;
+                        border: 2px solid $principal-color-black;
+                    }                 
+                }
+                textarea{
+                    min-width: 80%;
+                    max-width: 80%;
+                    min-height: 200px;
+                    max-height: 250px;
+                }
+            }
+            // popup button styles. //
+            .form__btn{
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1.5px;
+
+                padding: 10px 30px;
+                background-color: $principal-color-black;
+                color: $principal-color-white;
+                box-shadow: rgba(50, 50, 93, 0.25) 
+                0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+                border: 1px solid $principal-color-black;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: all .3s ease;
+
+                margin-bottom: 35px;
+                opacity: 1;  
+
+                &:hover{
+                    transform: translateY(5px);
+                    border: 1px solid $principal-color-black;
+                    background-color: $principal-color-white;
+                    color: $principal-color-black;
+                }
+            }
+        }
+    }
+    /* cuando el popup tenga la clase active, 
+       se le aplican las siguientes propiedades: */
+    .popup-container.active{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+// --- ✓ Popup contact styles. ✓ --- //
+/*=============== (:Footer:) ===============*/
 
 
 
@@ -371,11 +687,29 @@ header {
             }
         }
     }
-    
+    // -- fix horizontal gallery & vertical gallery --- //
     .gallery{
         // --- fix horizontal gallery --- //
         .gallery__horizontal{
             width: 70%;
+        }
+        // --- fix vertical gallery --- //
+        .gallery__vertical{
+            width: 70%;
+        }
+    }
+
+    // --- fix width social icons footer ---
+    footer{
+        .footer__container-social{
+            width: 60%;
+        }
+    }
+
+    // --- fix size popup ---
+    .overlay{
+        .popup-container{
+            width: 60%;
         }
     }
 }
@@ -403,6 +737,17 @@ header {
     .gallery{
         .gallery__horizontal{
             width: 80%;
+        }
+        // --- fix vertical gallery --- //
+        .gallery__vertical{
+            width: 80%;
+        }
+    }
+
+    // --- fix footer: size social icons footer ---
+    footer{
+        .footer__container-social{
+            width: 70%;
         }
     }
 }
@@ -444,17 +789,55 @@ header {
         }
     }
     
+    // -- fix horizontal gallery & vertical gallery --- //
     .gallery{
         // --- fix horizontal gallery --- //
         .gallery__horizontal{
             width: 85%;
 
             .horizontal__title{
-                font-size: 54px;
+                font-size: 48px;
             }
             .horizontal__subtitle{
                 font-size: 21px;
             }
+            
+            .swiper-container-padding{
+                display: none;
+            }
+            .feature-container{
+                display: none;
+            }
+        }
+        // --- fix vertical gallery --- //
+        .gallery__vertical{
+            width: 80%;
+            .vertical__container{
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 0;
+                .vertical__components{
+                    width: 85%;
+                    margin-bottom: 200px;
+                }
+            }
+        }
+    }
+
+    // --- fix size social icons footer --- //
+    footer{
+        .footer__container-social{
+            width: 80%;
+            .svg-container{
+                width: 40px;
+            }
+        }
+    }
+
+    // --- fix size popup --- //
+    .overlay{
+        .popup-container{
+            width: 80%;
         }
     }
 }
@@ -482,6 +865,35 @@ header {
                 }
             }
         }
+
+        // --- fix vertical gallery --- //
+        .gallery__vertical{
+            width: 90%;
+
+            .vertical__container{
+                .vertical__components{
+                    width: 100%;                    
+                }
+            }
+        }
+    }
+    
+    // --- fix size social icons footer ---
+    footer{
+        .footer__container-social{
+            width: 90%;
+        }
+        .footer__text{
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+    }
+
+    // --- fix size popup --- //
+    .overlay{
+        .popup-container{
+            width: 95%;
+        }
     }
 }
 
@@ -497,6 +909,13 @@ header {
             }
         }
 
+    }
+    footer{
+        .footer__container-social{    
+            .svg-container{
+                width: 30px;
+            }
+        }  
     }
 }
 /* =============== (:Responsive:) =============== */
