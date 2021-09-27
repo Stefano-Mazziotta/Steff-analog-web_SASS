@@ -254,10 +254,10 @@ section .bw-color .bw-color__container-flex .container-img .container-img__title
   text-align: center;
   padding: 20px;
 }
-section .random {
+section .museum {
   background-color: #f8f9fa;
 }
-section .random .random__container {
+section .museum .museum__container {
   width: 80%;
   margin: 0px auto;
   display: flex;
@@ -266,33 +266,51 @@ section .random .random__container {
   align-items: center;
   padding-bottom: 30px;
 }
-section .random .random__container .random__btn {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  padding: 15px 20px;
-  background-color: #212529;
-  color: #f8f9fa;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  border: 2px solid #212529;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  margin-bottom: 35px;
-}
-section .random .random__container .random__btn:hover {
-  transform: translateY(-7px);
-  background-color: #f8f9fa;
+section .museum .museum__container .museum__title {
   color: #212529;
-}
-section .random .random__container .random__img-container {
-  width: 70%;
+  font-size: 64px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 2px solid #212529;
   border-radius: 10px;
+  width: 60%;
+  margin-top: 0;
+  margin-bottom: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
-section .random .random__container .random__img-container img {
-  border-radius: 10px;
+section .museum .museum__container .swiper {
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+section .museum .museum__container .swiper .swiper-wrapper {
   width: 100%;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+}
+section .museum .museum__container .swiper .swiper-wrapper .swiper-slide {
+  width: 100%;
+  margin: 0 auto;
+}
+section .museum .museum__container .swiper .swiper-wrapper .swiper-slide img {
+  border-radius: 5px;
+  width: 100%;
+}
+section .museum .museum__container .swiper .swiper-wrapper .swiper-slide:hover {
+  cursor: grab;
+}
+section .museum .museum__container .swiper .swiper-wrapper .swiper-slide:active {
+  cursor: grabbing;
+}
+section .museum .museum__container .swiper .swiper-button-next, section .museum .museum__container .swiper .swiper-button-prev {
+  --swiper-theme-color: #667eea;
+}
+section .museum .museum__container .swiper .swiper-pagination .swiper-pagination-progressbar-fill {
+  --swiper-theme-color: #667eea;
 }
 section .gallery {
   padding-bottom: 150px;
@@ -321,7 +339,7 @@ section .gallery .gallery__container-all .gallery__title {
 section .gallery .gallery__container-all .gallery__container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 40%);
+  grid-template-columns: repeat(2, 35%);
   grid-template-rows: auto auto auto;
   justify-content: center;
   grid-template-areas: "verticaluno   horizontaluno" "verticaluno    horizontaldos" "horizontaltres   horizontaltres";
@@ -332,7 +350,8 @@ section .gallery .gallery__container-all .gallery__container .container-img {
   justify-content: center;
   align-content: center;
   position: relative;
-  border: 1px solid #f8f9fa;
+  border-top: 1px solid #f8f9fa;
+  border-bottom: 1px solid #f8f9fa;
   padding: 10px;
   border-radius: 20px;
   opacity: 0.8;
@@ -341,7 +360,8 @@ section .gallery .gallery__container-all .gallery__container .container-img {
 }
 section .gallery .gallery__container-all .gallery__container .container-img:hover {
   opacity: 1;
-  border: 2px solid #f8f9fa;
+  border-top: 2px solid #f8f9fa;
+  border-bottom: 2px solid #f8f9fa;
 }
 section .gallery .gallery__container-all .gallery__container .container-img img {
   width: 100%;
@@ -421,6 +441,36 @@ section .aboutme .aboutme__container-all .aboutme__text {
 section .aboutme .aboutme__container-all .aboutme__text .light {
   font-weight: 300;
 }
+section .aboutme .aboutme__container-all .aboutme__translate {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+section .aboutme .aboutme__container-all .aboutme__translate .translate__btn {
+  border: none;
+  background-color: #212529;
+  color: #f8f9fa;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+section .aboutme .aboutme__container-all .aboutme__translate .translate__btn:hover {
+  box-shadow: none;
+  background-color: #6c757d;
+}
+section .aboutme .aboutme__container-all .aboutme__translate .translate__btn.activate {
+  cursor: initial;
+  box-shadow: none;
+  background-color: #6c757d;
+}
 section .aboutme .aboutme__container-all .aboutme__arrow-up {
   display: block;
   cursor: pointer;
@@ -436,7 +486,7 @@ section .aboutme .aboutme__container-all .aboutme__arrow-up:hover {
   transform: translateY(-4px);
 }
 
-/*=============== ✓ Sections ✓ ===============*/
+/*=============== (:Sections:) ===============*/
 /*=============== Footer ===============*/
 footer {
   height: 200px;
@@ -451,7 +501,7 @@ footer .footer__container-social {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 2px solid #f8f9fa;
+  border-bottom: 2px solid rgba(248, 249, 250, 0.3);
   border-radius: 45px;
   padding-bottom: 20px;
 }
@@ -599,7 +649,7 @@ footer .footer__text {
   transform: scale(1);
 }
 
-/*=============== ✓ Footer ✓ ===============*/
+/*=============== (:Footer:) ===============*/
 /*=============== Responsive ===============*/
 @media (max-width: 1270px) {
   header {
@@ -622,6 +672,9 @@ footer .footer__text {
   section .bw-color .bw-color__container-flex .container-img {
     width: 35%;
   }
+  section .museum .museum__container .swiper {
+    width: 85%;
+  }
 
   .overlay .popup-container {
     width: 60%;
@@ -643,8 +696,17 @@ footer .footer__text {
     margin-bottom: 100px;
     width: 50%;
   }
+  section .museum .museum__container .museum__title {
+    font-size: 48px;
+  }
+  section .museum .museum__container .swiper {
+    width: 100%;
+  }
+  section .gallery .gallery__container-all .gallery__title {
+    font-size: 48px;
+  }
   section .gallery .gallery__container-all .gallery__container {
-    grid-template-columns: 90%;
+    grid-template-columns: 95%;
     grid-template-rows: auto auto auto auto;
     grid-template-areas: "verticaluno" "horizontaluno" "horizontaldos" "horizontaltres";
     gap: 50px 0px;
@@ -661,7 +723,7 @@ footer .footer__text {
     margin-bottom: 25px;
   }
   section .aboutme .aboutme__container-all .aboutme__container-flex .container-img {
-    width: 60%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 50px;
   }
@@ -724,14 +786,15 @@ footer .footer__text {
   section .bw-color .bw-color__container-flex .container-img {
     width: 70%;
   }
-  section .random .random__container {
-    margin-top: 75px;
+  section .museum .museum__container .museum__title {
+    width: 100%;
+    font-size: 32px;
   }
-  section .random .random__container .random__btn {
-    padding: 10px 15px;
+  section .museum .museum__container .swiper .swiper-button-next, section .museum .museum__container .swiper .swiper-button-prev {
+    --swiper-navigation-size:24px;
   }
-  section .random .random__container .random__img-container {
-    width: 105%;
+  section .gallery .gallery__container-all .gallery__title {
+    width: 100%;
   }
   section .gallery .gallery__container-all .gallery__container .container-img .uno {
     content: url(../components/images/gallery/Vertical/Responsive/Champaqui-responsive.JPG);
@@ -740,7 +803,7 @@ footer .footer__text {
     content: url(../components/images/gallery/Vertical/Responsive/rosario-responsive.jpg);
   }
   section .gallery .gallery__container-all .gallery__container .container-img .tres {
-    content: url(../components/images/gallery/Vertical/Responsive/street2-responsive.jpg);
+    content: url(../components/images/gallery/Vertical/Responsive/mardelplata-responsive.jpg);
   }
   section .aboutme .aboutme__container-all .aboutme__title {
     font-size: 36px;
@@ -803,6 +866,6 @@ footer .footer__text {
     max-width: 90%;
   }
 }
-/*=============== ✓ Responsive ✓ ===============*/
+/*=============== (:Responsive:) ===============*/
 
 /*# sourceMappingURL=style.css.map */

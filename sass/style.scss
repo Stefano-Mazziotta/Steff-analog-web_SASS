@@ -244,11 +244,11 @@ section {
     }
     // ---------- ✓ Black&white or color ✓ ---------- //
 
-    // ---------- Random photo ---------- //
-    .random{
+    // ---------- museum photo ---------- //
+    .museum{
         background-color: $principal-color-white;
 
-        .random__container {
+        .museum__container {
             width: 80%;
             margin: 0px auto;
             display: flex;
@@ -257,42 +257,71 @@ section {
             align-items: center;
             padding-bottom:30px ;
 
-            .random__btn{
-                font-size: 14px;
+            .museum__title {
+                color: #212529;
+                font-size: 64px;
+                letter-spacing: 1px;
                 font-weight: 500;
-                letter-spacing: 1.5px;
-
-                padding: 15px 20px;
-                background-color: $principal-color-black;
-                color: $principal-color-white;
-                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-
-                border: 2px solid $principal-color-black;
-                cursor: pointer;
-                border-radius: 5px;
-                transition: all .3s ease;
-
-                margin-bottom: 35px;   
-
-                &:hover{
-                    transform: translateY(-7px);
-                    background-color: $principal-color-white;
-                    color: $principal-color-black;
-                }
-            }
-
-            .random__img-container {
-                width: 70%;
+                text-align: center;
+                border-bottom: 2px solid #212529;
                 border-radius: 10px;
-                img {
-                    border-radius: 10px;
-                    width: 100%;
-                    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+                width: 60%;
+                margin-top: 0;
+                margin-bottom: 100px;
+                margin-right: auto;
+                margin-left: auto;
+                padding-right: 20px;
+                padding-left: 20px;
+                padding-bottom: 20px;
+            }
+
+            .swiper{
+                width: 75%;
+                margin: 0 auto;
+                border-radius: 5px;
+                
+                .swiper-wrapper{
+                    width:100%;
+                    margin: 0 auto;
+                    
+                    .swiper-slide{
+                        width: 100%;
+                        margin: 0 auto;
+                        
+                        img{
+                            
+                            border-radius: 5px;
+                            width: 100%;
+                        }
+                        &:hover{cursor: grab;}
+                        &:active{cursor: grabbing;}
+                    }
+                }
+                .swiper-button-next,.swiper-button-prev{
+                    --swiper-theme-color: #667eea;
+                }
+                .swiper-pagination{
+                    // --swiper-theme-color: $principal-color;
+                    .swiper-pagination-progressbar-fill{
+                        --swiper-theme-color: #667eea;
+                    }
                 }
             }
+            
+            
+            
+            // .museum__img-container {
+            //     width: 70%;
+            //     border-radius: 10px;
+            //     img {
+            //         border-radius: 10px;
+            //         width: 100%;
+            //         
+            //     }
+            // }
         }    
     }
-    // ---------- ✓ Random photo ✓ ---------- //
+    // ---------- ✓ museum photo ✓ ---------- //
 
     // ---------- Gallery ---------- //
     .gallery{
@@ -328,7 +357,7 @@ section {
                 width: 100%;
 
                 display: grid;
-                grid-template-columns: repeat(2,40%);
+                grid-template-columns: repeat(2,35%);
                 grid-template-rows: auto auto auto;
                 justify-content: center;
 
@@ -344,7 +373,8 @@ section {
                     align-content: center;
                     position: relative;
                     
-                    border: 1px solid $principal-color-white;
+                    border-top: 1px solid $principal-color-white;
+                    border-bottom: 1px solid $principal-color-white;
                     padding: 10px;
                     border-radius: 20px;
                     opacity: .8;
@@ -353,7 +383,8 @@ section {
                     cursor: pointer;                
                     &:hover{
                         opacity: 1;
-                        border: 2px solid $principal-color-white;
+                        border-top: 2px solid $principal-color-white;
+                        border-bottom: 2px solid $principal-color-white;
                     } 
 
                     img {
@@ -375,7 +406,7 @@ section {
             }    
         }    
     }
-    // ---------- ✓ Gallery ✓ ---------- //
+    // ---------- (:Gallery:) ---------- //
 
     // ---------- aboutme ---------- //
     .aboutme{
@@ -449,6 +480,42 @@ section {
                 .light{font-weight: 300;}
             }
             
+            .aboutme__translate{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-bottom: 50px;
+
+                .translate__btn{
+                    border: none;
+                    background-color: $principal-color-black;
+                    color: $principal-color-white;
+                    cursor:pointer;
+
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+
+                    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+                    font-weight: 500;
+                    letter-spacing: 1.5px;
+                    text-align: center;
+
+                    transition: all .3s ease;
+                    &:hover{
+                        box-shadow: none;
+                        background-color: $hover-button-color;
+                    }
+                }
+                .translate__btn.activate{
+                    cursor:initial;
+                    box-shadow: none;
+                    background-color: $hover-button-color;
+                }
+            }
+
             .aboutme__arrow-up{
                 display: block;
                 // transform: rotate(180deg);
@@ -470,9 +537,9 @@ section {
             }
         }
     }
-    // ---------- ✓ aboutme ✓ ---------- //
+    // ---------- (:aboutme:) ---------- //
 }
-/*=============== ✓ Sections ✓ ===============*/
+/*=============== (:Sections:) ===============*/
 
 /*=============== Footer ===============*/
 footer{
@@ -490,7 +557,7 @@ footer{
         justify-content: space-around;
         align-items: center;
 
-        border-bottom: 2px solid $principal-color-white;
+        border-bottom: 2px solid rgba($principal-color-white, .3);
         border-radius: 45px;
         padding-bottom: 20px;
 
@@ -672,8 +739,8 @@ footer{
         transform: scale(1);
     }
 }
-// --- ✓ Popup contact styles. ✓ --- //
-/*=============== ✓ Footer ✓ ===============*/
+// --- (:Popup contact styles.:) --- //
+/*=============== (:Footer:) ===============*/
 
 /*=============== Responsive ===============*/
 @media (max-width: 1270px){
@@ -710,6 +777,18 @@ footer{
             }
         }
         // ✓ black&white or color repaired ✓ //
+    
+        // size swiper museum repaired //
+
+        .museum{
+            .museum__container{
+                .swiper{
+                    width: 85%;
+                }
+            }
+        }
+    
+        // ✓ size swiper museum repaired ✓ //
     }
 
     // popup size repaired //
@@ -755,11 +834,30 @@ footer{
         }
         // ✓ black&white or color ---> position repaired ✓ //
 
+        // size swiper museum repaired //
+
+        .museum{
+            .museum__container{
+                
+                .museum__title{
+                    font-size: 48px;
+                }
+                .swiper{
+                    width:100%;
+                }
+            }
+        }
+    
+        // ✓ size swiper museum repaired ✓ //
+
         // gallery ---> position repaired //
         .gallery{
             .gallery__container-all{
+                .gallery__title{
+                    font-size: 48px;
+                }
                 .gallery__container{
-                        grid-template-columns: 90%;
+                        grid-template-columns: 95%;
                         grid-template-rows: auto auto auto auto;
                         grid-template-areas:    "verticaluno"
                                                 "horizontaluno"
@@ -790,7 +888,7 @@ footer{
                     margin-bottom: 25px;
 
                     .container-img{
-                        width: 60%;
+                        width: 100%;
 
                         padding: 10px;
                         margin-bottom: 50px;
@@ -904,29 +1002,35 @@ footer{
         }
         // ✓ black&white or color repaired. ✓ //
 
-        // random photo repaired.
-        .random{
-            .random__container{
-                margin-top: 75px;
-
-                .random__btn{
-                    padding: 10px 15px;
+        // museum photo repaired.
+        .museum{
+            .museum__container{
+                
+                .museum__title{
+                    width: 100%;
+                    font-size: 32px;
                 }
-                .random__img-container{
-                    width: 105%;
+
+                .swiper{
+                    .swiper-button-next,.swiper-button-prev{
+                        --swiper-navigation-size:24px;
+                    }
                 }
             }
         }
-        // ✓ random photo repaired. ✓ //
+        // ✓ museum photo repaired. ✓ //
 
         // gallery ---> change horizontal imgs for vertical imgs. // 
         .gallery{
             .gallery__container-all {
+                .gallery__title{
+                    width: 100%;
+                }
                 .gallery__container {
                     .container-img {
                         .uno {content: url(../components/images/gallery/Vertical/Responsive/Champaqui-responsive.JPG);}
                         .dos {content: url(../components/images/gallery/Vertical/Responsive/rosario-responsive.jpg);}
-                        .tres {content: url(../components/images/gallery/Vertical/Responsive/street2-responsive.jpg);}
+                        .tres {content: url(../components/images/gallery/Vertical/Responsive/mardelplata-responsive.jpg);}
                     }
                 }
             }
@@ -1061,4 +1165,4 @@ footer{
     }
     // ✓ popup size repaired ✓ //
 }
-/*=============== ✓ Responsive ✓ ===============*/
+/*=============== (:Responsive:) ===============*/

@@ -2,13 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Analog Photography website.">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="shortcut icon" href="components/favicon/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Analog Photography website."/>
+    <link 
+        rel="stylesheet" 
+        href="css/style.css"/>
+    <link 
+        rel="stylesheet" 
+        href="css/normalize.css"/>
+    <link rel="stylesheet" 
+        href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link 
+        rel="shortcut icon" 
+        href="components/favicon/favicon.ico"/>
+
     <title>Steff analog web</title>
 </head>
 <body>
@@ -47,7 +59,7 @@
 
                 <ul class="nav-menu">
                     <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#--js_random__btn-id">Random Photo</a></li>
+                    <li><a href="index.html#museum">Museum</a></li>
                     <li><a href="index.html#gallery_id">Gallery</a></li>
                     <li><a href="index.html#aboutme_id">About me</a></li>
                 </ul>
@@ -75,20 +87,20 @@
         <article id="blackandwhite-or-color_id" class="bw-color">
             <div class="bw-color__container-flex" data-aos="fade-right">
                 <div class="container-img" >
-                    <a href="links/color_section/color_section.html"><img src="components/images/elección_bw_color/vertical-color.jpg" alt="Color image"></a>
+                    <a href="links/Choice color or b&w/color_section/color_section.html#home"><img src="components/images/elección_bw_color/vertical-color.jpg" alt="Color image"></a>
                     <h2 class="container-img__title">Color</h2>
                 </div>
 
                 <div class="container-img">
-                    <a href="links/black-and-white_section/black-and-white_section.html"><img src="components/images/elección_bw_color/vertical-byn.jpg" alt=""></a>
+                    <a href="links/Choice color or b&w/black-and-white_section/black-and-white_section.html#home"><img src="components/images/elección_bw_color/vertical-byn.jpg" alt=""></a>
                     <h2 class="container-img__title">Black & White</h2>
                 </div>
             </div>
         </article>
         <!--============== ✓ black & white OR color ✓ ==============-->
 
-        <!--============== Random photo  ==============-->
-        <article class="random">
+        <!--============== Museum  ==============-->
+        <article id="museum" class="museum">
             <!-- separator -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="rgb(33, 37, 41)" fill-opacity="1" 
@@ -109,14 +121,31 @@
             </svg>
             <!-- separator -->
 
-            <div class="random__container" data-aos="fade-right">
-                <button id="--js_random__btn-id" class="random__btn">RANDOM PHOTO</button>
-                <div id="--js_fix-width" class="random__img-container">
-                    <img id="--js_random__img-id" src="components/images/random_photo/Horizontal/4.jpg" alt="film image random photo section">
+            <div class="museum__container" data-aos="fade-right">
+
+                <h2 class="museum__title">Museum</h2>
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="components/images/museum_photo/Horizontal_1/1.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="components/images/museum_photo/Horizontal_1/2.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="components/images/museum_photo/Horizontal_1/3.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="components/images/museum_photo/Horizontal_1/4.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="components/images/museum_photo/Horizontal_1/5.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="components/images/museum_photo/Horizontal_1/6.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="components/images/museum_photo/Horizontal_1/7.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="components/images/museum_photo/Horizontal_1/8.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="components/images/museum_photo/Horizontal_1/9.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="components/images/museum_photo/Horizontal_1/10.jpg" alt=""></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
+                
             </div>            
         </article>
-        <!--============== ✓ Random photo ✓ ==============-->
+        <!--============== ✓ Museum ✓ ==============-->
 
         <!--============== Gallery  ==============-->
         <article class="gallery">
@@ -148,28 +177,28 @@
                 <div class="gallery__container">
 
                     <!-- street -->
-                    <div class="container-img vertical_uno ">
+                    <a href="links/Gallery/Street/gallery_street.html" class="container-img vertical_uno ">
                         <img src="components/images/gallery/Vertical/street.jpg" alt="">
                         <h3 class="title-img">Street</h3>
-                    </div>
+                    </a>
 
                     <!-- champa -->
-                    <div class="container-img horizontal_uno">
+                    <a href="links/Gallery/Champaqui/gallery_champaqui.html" class="container-img horizontal_uno">
                         <img class="uno" src="components/images/gallery/Horizontal/Champaqui.JPG" alt="">
                         <h3 class="title-img">Champaquí</h3>
-                    </div>
+                    </a>
 
                     <!-- rosario -->
-                    <div class="container-img horizontal_dos">
+                    <a href="links/Gallery/Rosario/gallery_rosario.html" class="container-img horizontal_dos">
                         <img class="dos" src="components/images/gallery/Horizontal/Rosario.jpg" alt="">
                         <h3 class="title-img">Rosario</h3>
-                    </div>
+                    </a>
 
                     <!-- street 2 -->
-                    <div class="container-img horizontal_tres">
-                        <img class="tres" src="components/images/gallery/Horizontal/pajaros-peatonal.jpg" alt="">
-                        <h3 class="title-img">Street 2</h3>
-                    </div>
+                    <a href="links/Gallery/Mardelplata/gallery_mardelplata.html" class="container-img horizontal_tres">
+                        <img class="tres" src="components/images/gallery/Horizontal/Mar-del-plata.jpg" alt="">
+                        <h3 class="title-img">Mar del plata</h3>
+                    </a>
                     
                 </div>
             </div>
@@ -213,15 +242,21 @@
                 </div>
 
                 <p class="aboutme__text">
-                    <span class="light">
-                        Me llamo Stefano Mazziotta. Fotógrafo artístico. Comencé en este maravilloso
-                        mundo con la cámara Minolta Hi-Matic 7s, heredada por mi abuelo. <br>
+                    <span id="--js_txt-light" class="light">
+                        My name is Stefano Mazziotta. Artistic photographer.<br>
+                        I started in this wonderful world with the Minolta Hi-Matic 7s camera, inherited from my grandfather.<br>
                     </span>
-                    <strong>A través de esta web navegarás el inmenso oceáno de mis fotografías analógicas y podrás empaparte de sentimientos inigualables.</strong>
+                    <strong id="--js_txt-strong">Through this website you will navigate the immense ocean of my analog photographs and you will be able to soak up unparalleled feelings.</strong>
                 </p>
 
+                <div class="aboutme__translate">
+                    <button id="--js_btn-EN" class="translate__btn activate">EN</button>
+                    <button id="--js_btn-ES" class="translate__btn">ES</button>
+                    <button id="--js_btn-KR" class="translate__btn">KR</button>
+                </div>
+
                 <!-- arrow up -->
-                <a class="aboutme__arrow-up" href="index.html#home" data-aos="fade-right">
+                <a class="aboutme__arrow-up" href="index.html#home">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g data-name="Layer 2"><g data-name="arrowhead-up"><rect opacity="0" transform="rotate(180 12 12)"/>
                             <path d="M6.63 11.61L12 7.29l5.37 4.48A1 1 0 0 0 18 12a1 1 0 0 0 .77-.36 1 1 0 0 0-.13-1.41l-6-5a1 1 0 0 0-1.27 0l-6 4.83a1 1 0 0 0-.15 1.41 1 1 0 0 0 1.41.14z"/>
@@ -323,7 +358,9 @@
     <script src="js/preloader.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/aos-init.js"></script>
-    <script src="js/random-photo.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/museum-swipper.js"></script>
+    <script src="js/translate-aboutme.js"></script>
     <script src="js/popup.js"></script>
 </body>
 </html>

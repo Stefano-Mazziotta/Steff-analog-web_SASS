@@ -1,0 +1,975 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap');
+@import "../../../../sass/variables.scss";
+@import "../../../../sass/mixins.scss";
+
+*{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: $principal-color-black;
+}
+
+/*=============== preloader ===============*/
+body{
+    .preloader{
+        width: 100%;
+        height: 100vh;
+        background-color: $principal-color-black;
+        z-index: 100;
+        position: fixed;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .preloader__elements{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            .preloader__svg-diafragma{
+                width: 100px;
+                height: 100px;
+                fill: $principal-color-white;
+
+                animation: loading_effect 3s infinite;
+            }
+            @keyframes loading_effect {
+                from{transform: rotate(0deg);}
+                to{transform: rotate(360deg);}
+            }
+            .preloader__title{
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: 1px;
+                color: $principal-color-white;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+/*=============== ✓ preloader ✓ ===============*/
+
+/*=============== HEADER ===============*/
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../components/Header/header_bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment:scroll;
+    background-size:cover;
+
+    .header__container{
+        width: 80%;
+        position: relative;
+        margin: 0 auto;
+
+        /* ===== nav-bar ===== */
+        .header__nav{
+            width: 100%;
+            padding: 25px 0;
+            margin-bottom: 50vh;
+
+            display: flex;
+            flex-direction: row;
+            align-items:center;
+            justify-content: space-between;
+
+            // HEADER logo styles
+            .nav__logo {
+                width: 30%;
+                text-decoration: none;  
+                              
+                color: $principal-color-white;
+                fill: $principal-color-white;
+                letter-spacing: 2px;
+
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+
+                transition: color .5s ease, fill .5s ease;
+                &:hover {
+                    color: $hover-header-color;
+                    fill: $hover-header-color;
+                }
+
+                .nav__title {font-size: 28px;}
+
+                .nav__svg-35mmfilm {
+                    width: 40px;
+                    height: 40px;
+                    transform: rotate(90deg);
+                    position: relative;
+                    right: 15px;
+                }
+            }
+            // NAV-MENU styles
+            .nav__menu {
+                width: 70%;
+                list-style: none;
+
+                display: flex;
+                justify-content: flex-end;
+
+                li {
+                    display: inline-block;
+                    text-align: center;
+                }
+                a {
+                    text-decoration: none;
+                    display: inline-block;
+                    padding: 25px 25px 10px 25px;
+
+                    font-size: 22px;
+                    letter-spacing: 1.5px;
+                    color: $principal-color-white;
+
+                    transition: border .3s ease, color .3s ease;
+                    &:hover {
+                        color: $hover-header-color;
+                        border-bottom: 1px solid $hover-header-color;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+        /* ===== ✓ nav-bar ✓ ===== */
+
+        .header__elements-container{
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            // color photography text
+            .elements__title{
+                display: flex;
+                flex-direction: column;
+                padding: 10px 30px;
+                margin-bottom: 25px;
+
+                color: $principal-color-white;
+                text-decoration: none;
+
+                border-radius: 5px;
+                border-top: 2px solid $principal-color-white;
+                border-bottom: 1px solid $principal-color-white;
+                background: rgba($color: $principal-color-black, $alpha: 0.7);
+
+                transition: all .3s ease;
+                &:hover{
+                    color: $hover-header-color;
+                    border-top: 2px solid $hover-header-color;
+                    border-bottom: 1px solid $hover-header-color;
+                }
+
+                
+                .title-one{
+                    width: 100%;
+                    font-size: 64px;
+                    font-weight: 600;
+                }
+                .title-two{
+                    text-align: right;
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+            }
+            
+            // go to black & white button
+            .elements__btn{
+                width: 200px;
+                text-decoration: none;
+                color: $principal-color-black;
+
+                padding: 15px 20px;
+                background-color: $principal-color-white;
+                border-radius: 5px;
+                
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                &::after {
+                    color: $principal-color-black;
+                    display: block;
+                    content: "→";
+                    font-size: 24px;
+                    margin-left: 10px;
+                    margin-top: -2px;
+                    transition: all .3s ease;
+                }
+
+                transition: all .3s ease;
+                &:hover{
+                    background-color: $hover-header-color;
+                    box-shadow: none;
+                    &::after{
+                        transform: translateX(5px);
+                    }
+                }
+                
+                h3{
+                    font-size: 14px;
+                    font-weight: 500;
+                    letter-spacing: .5px;
+                }
+            }
+        }
+
+        .elements__arrowdown-container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .elements__arrow-down{
+
+                width: 50px;    
+                margin-left: 15px;
+                fill: $principal-color-white;
+    
+                animation: respiracion 4s infinite;
+                @keyframes respiracion {
+                    0%{
+                        transform: translateY(0px);
+                    }
+                    50%{
+                        transform: translateY(-10px);
+                    }
+                    100%{
+                        transform: translateY(0px);
+                    }
+                }
+                transition: fill .3s ease;
+                &:hover{
+                    fill: $hover-header-color;
+                }
+            }
+        }
+    }
+}
+/*=============== (:HEADER:) ===============*/
+
+/*=============== GALLERY.STREET ===============*/
+.gallery{
+    width: 100%;
+    margin: 0 auto;
+
+    //--- horizontal gallery container ---//
+    .gallery__horizontal{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        
+        // title & subtitle gallery.
+        .horizontal__title{
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            padding-left: 10px;
+            padding-right: 10px;
+            
+            font-size:64px;
+            color: $principal-color-white;
+            letter-spacing: 1px;
+        }
+        .horizontal__subtitle{
+            width: 100%;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            padding-left: 10px;
+            padding-right: 10px;
+           
+            font-weight: 300;
+            font-size: 24px;
+            color: $principal-color-white;
+            line-height: 50px;
+
+            border-bottom: 1px solid $principal-color-white;
+            border-radius: 10px;
+        }
+        //btn's translate
+        .horizontal__btn-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            margin-bottom: 125px;
+            .btn-language{
+                border: none;
+                cursor: pointer;
+                
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                
+                background-color: $principal-color-white;
+                color: $principal-color-black;
+                font-weight: 800;
+                text-align: center;
+                font-size: 18px;
+
+                transition: background-color .3s ease, box-shadow .3s ease;
+                &:hover{
+                    box-shadow: none;
+                    background-color: $hover-button-color;
+                }
+            }
+            .btn-language.active{
+                background-color: $hover-button-color;
+                color: $principal-color-white;
+                cursor: default;
+            }
+        }
+
+        //swiper container    
+        .swiper-container-padding{
+            background-color: rgba($hover-button-color,.2);
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+
+            .swiper{
+                display: flex;
+                width: 100%;
+                background-color: rgba($hover-button-color,.0);
+    
+                .swiper-wrapper{
+                    .swiper-slide{      
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        
+                        .slide__img{
+                            border-radius: 5px;
+                            width: 99.5%;
+                        }
+                        &:hover{cursor: grab;}
+                        &:active{cursor: grabbing;}
+                    }
+                }
+                .swiper-pagination{
+                    --swiper-theme-color: #667EEA;
+                }
+            }
+
+        }
+        
+        .feature-container{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 200px;
+        
+            .feature__svg{
+                width: 25px;
+                height: 25px;
+            }
+            .feature__txt{
+                // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
+                @include styles_text($principal-color-white, 21px, .5px, 500, left);  
+                margin-left: 10px             
+            }
+        } 
+    }
+
+    //--- vertical gallery container ---//
+    .gallery__vertical{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+
+        .vertical__container{
+            width: 100%;
+            margin-bottom: 200px;
+            
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .vertical__components{
+                width: 45%;
+                
+                .components__img-container{
+                    background-color: rgba($hover-button-color,.2);
+                    padding: 10px 10px;
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    img{
+                        width: 100%;
+                        border-radius: 5px;
+                        vertical-align: top;
+                    }
+                }
+
+                .components__feature-container{
+                    width: 100%;
+
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+
+                    .feature__svg{
+                        width: 20px;
+                        height: 20px;
+                    }
+                    .feature__txt{
+                        margin-left: 10px;
+                        // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
+                        @include styles_text($principal-color-white, 18px, .5px, 500, left); 
+                        
+                    }
+                }
+            }
+
+            
+        }
+    }
+
+    // element --> scroll up
+    
+    .scroll-up__container{
+        width: 50px;
+        height: 50px;
+        background-color: $principal-color-white;
+        border-radius: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: 2%;
+        margin-bottom: 2%;        
+        
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 1000;
+        
+        opacity: 0;
+        .scroll-up__element{
+            fill: $principal-color-black;
+
+            transition: fill .3s ease, transform .3s ease;
+            &:hover{
+                fill: $hover-button-color;
+                transform: translateY(-1px);
+            }
+            svg{
+                width: 40px;
+                height: 40px;
+            }        
+        }
+    }
+    .active{
+        animation: entrada_scroll-up .6s ease 0s forwards;
+    }
+    // animation entrada_scroll-up
+    @keyframes entrada_scroll-up{
+        from{opacity: 0;}
+        to{
+            opacity: 1;
+        }
+    }
+
+}
+/*=============== (:GALLERY.STREET:) ===============*/
+
+/*=============== Footer ===============*/
+footer{
+    height: 300px;
+    background-color: rgba($hover-button-color,.2);
+    // contenedor redes sociales //
+    .footer__container-social{
+        width: 50%;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        border-bottom: 2px solid $principal-color-white;
+        border-radius: 20px;
+        padding-bottom: 20px;
+        padding-top: 100px;
+
+        .svg-container{
+            width: 50px;
+            display: block;
+
+            fill: $principal-color-white;
+            stroke: $principal-color-white;
+            cursor: pointer;
+            
+            transition: all .3s ease;
+            &:hover{
+                fill: $hover-header-color;
+                stroke: $hover-header-color;
+                transform: scale(1.1);
+            }    
+        }
+    }
+    .footer__text{
+        // mixin ->
+        // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
+        @include styles_text($principal-color-white, 16px, 1.5px, 500, center);
+    }    
+}
+
+// --- Popup contact styles. --- //
+.overlay{
+    background-color: rgb(0,0,0,.5);
+    z-index: 1000;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    visibility: hidden;
+    &.active{
+        visibility: visible;
+    }
+
+    // popup styles //
+    .popup-container{
+        position: relative;
+        text-align: center;
+        width: 40%;
+        min-height: 500px;
+        z-index: 1000;
+
+        background-color: $principal-color-white;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        padding: 50px 0px 10px 0px;
+        border-radius: 10px;
+
+        opacity: 0;
+        transition: all .3s ease;
+        transform: scale(.7);
+        
+
+        // popup cross close styles. //
+        .popup__cross--close{
+            display: block;
+            cursor: pointer;
+
+            fill: $principal-color-black;
+            transition: fill .3s ease;
+            &:hover{
+                fill: #d00000;
+            }
+            svg {
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                top: 3%;
+                right: 3%;
+            }
+        }
+        
+        // popup title styles. //
+        .popup__title{
+            // mixin ->
+            // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
+            @include styles_text($principal-color-white, 24px, 1.5px, 500, center);
+
+            background-color: $principal-color-black;
+            text-transform: uppercase;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-bottom: 50px;
+
+            opacity: 0;
+            animation: entrada_titulo .8s ease forwards;
+        }
+
+        // popup form styles. //
+        .popup__form{
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            opacity: 0;
+            animation: entrada_inputs .8s ease .6 forwards;
+
+            // popup inputs container. //
+            .form__input-container{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                // popup input and textarea styles. //
+                input,textarea{
+                    outline: none;
+                    text-align: center;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    width: 80%;
+
+                    border: 1px solid $principal-color-black;
+                    border-radius: 10px;
+                    box-shadow: rgba(50, 50, 93, 0.25) 
+                    0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+                    
+                    padding: 10px;
+                    margin-bottom: 25px;
+
+                    transition: all .1s linear;
+                    &:focus{
+                        box-shadow: none;
+                        border: 2px solid $principal-color-black;
+                    }                 
+                }
+                textarea{
+                    min-width: 80%;
+                    max-width: 80%;
+                    min-height: 200px;
+                    max-height: 250px;
+                }
+            }
+            // popup button styles. //
+            .form__btn{
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1.5px;
+
+                padding: 10px 30px;
+                background-color: $principal-color-black;
+                color: $principal-color-white;
+                box-shadow: rgba(50, 50, 93, 0.25) 
+                0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+                border: 1px solid $principal-color-black;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: all .3s ease;
+
+                margin-bottom: 35px;
+                opacity: 1;  
+
+                &:hover{
+                    transform: translateY(5px);
+                    border: 1px solid $principal-color-black;
+                    background-color: $principal-color-white;
+                    color: $principal-color-black;
+                }
+            }
+        }
+    }
+    /* cuando el popup tenga la clase active, 
+       se le aplican las siguientes propiedades: */
+    .popup-container.active{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+// --- ✓ Popup contact styles. ✓ --- //
+/*=============== (:Footer:) ===============*/
+
+
+
+
+
+/* =============== Responsive =============== */
+@media (max-width: 1280px){
+    // --- fix header --- //
+    header{
+        .header__container{
+            .header__nav{
+                flex-direction: column;
+                margin-bottom: 40vh;
+                
+                .nav__logo{
+                    width: 100%;
+                }
+                .nav__menu{
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+
+            .header__elements-container{
+                flex-direction: column;
+                justify-content: center;
+
+                .elements__title{
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+    // -- fix horizontal gallery & vertical gallery --- //
+    .gallery{
+        // --- fix horizontal gallery --- //
+        .gallery__horizontal{
+            width: 70%;
+        }
+        // --- fix vertical gallery --- //
+        .gallery__vertical{
+            width: 70%;
+        }
+    }
+
+    // --- fix width social icons footer ---
+    footer{
+        .footer__container-social{
+            width: 60%;
+        }
+    }
+
+    // --- fix size popup ---
+    .overlay{
+        .popup-container{
+            width: 60%;
+        }
+    }
+}
+
+@media (max-width: 890px){
+    // --- fix header --- //
+    header{
+        .header__container{
+            .header__nav{
+                .nav__menu{
+                    a{
+                        letter-spacing: 1px;
+                        font-size: 18px;
+                        padding: 20px 20px 10px 20px;
+                    }
+                }
+            }
+        }
+    }
+    // --- fix horizontal gallery --- //
+    .gallery{
+        .gallery__horizontal{
+            width: 80%;
+        }
+        // --- fix vertical gallery --- //
+        .gallery__vertical{
+            width: 80%;
+        }
+    }
+
+    // --- fix footer: size social icons footer ---
+    footer{
+        .footer__container-social{
+            width: 70%;
+        }
+    }
+}
+
+// tablet
+@media (max-width: 768px){
+    // --- fix header --- //
+    header{
+        .header__container{
+
+            .header__nav{
+                margin-bottom: 20vh;
+
+                .nav__logo{
+                    justify-content: flex-start;
+                    margin-bottom: 10px;
+                }
+                .nav__menu{
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 0;
+                    
+                    a{
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        font-size: 21px;
+                    }
+                }
+            }
+
+            .header__elements-container{
+                .elements__title{
+                    padding: 10px 20px;
+                    .title-one{
+                        font-size: 48px;
+                    }
+                }
+            }
+        }
+    }
+    
+    // -- fix horizontal gallery & vertical gallery --- //
+    .gallery{
+        // --- fix horizontal gallery --- //
+        .gallery__horizontal{
+            width: 85%;
+
+            .horizontal__title{
+                font-size: 48px;
+            }
+            .horizontal__subtitle{
+                font-size: 21px;
+            }
+            
+            .swiper-container-padding{
+                display: none;
+            }
+            .feature-container{
+                display: none;
+            }
+        }
+        // --- fix vertical gallery --- //
+        .gallery__vertical{
+            width: 80%;
+            .vertical__container{
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 0;
+                .vertical__components{
+                    width: 85%;
+                    margin-bottom: 200px;
+                }
+            }
+        }
+    }
+
+    // --- fix size social icons footer --- //
+    footer{
+        .footer__container-social{
+            width: 80%;
+            .svg-container{
+                width: 40px;
+            }
+        }
+    }
+
+    // --- fix size popup --- //
+    .overlay{
+        .popup-container{
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 425px){
+    
+    .gallery{
+        // --- fix horizontal gallery --- //
+        .gallery__horizontal{
+            width: 90%;
+
+            .horizontal__title{
+                font-size: 36px;
+            }
+            .horizontal__subtitle{
+                font-size: 18px;
+            }
+
+            .swiper-container-padding{
+                padding: 5px;
+                margin-bottom: 15px;
+            }
+
+            .feature-container{
+                justify-content: center;
+                .feature__svg{
+                    width: 25px;
+                    height: 20px;
+                }
+                .feature__txt{
+                    font-size: 18px;
+                }
+            }
+        }
+
+        // --- fix vertical gallery --- //
+        .gallery__vertical{
+            width: 90%;
+
+            .vertical__container{
+                .vertical__components{
+                    width: 100%;                    
+                }
+            }
+        }
+    }
+    
+    // --- fix size social icons footer ---
+    footer{
+        .footer__container-social{
+            width: 90%;
+        }
+        .footer__text{
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+    }
+
+    // --- fix size popup --- //
+    .overlay{
+        .popup-container{
+            width: 95%;
+        }
+    }
+}
+
+@media (max-width: 360px){
+    header{
+        .header__container{
+            .header__nav{
+                margin-bottom: 12vh;
+                .nav__logo{
+                    letter-spacing: 1.5px;
+                    .nav__title{font-size: 24px;}
+                }
+            }
+
+            .header__elements-container{
+                .elements__title{
+                    .title-one{
+                        font-size: 36px;
+                    }
+                }
+            }
+        }
+
+    }
+    footer{
+        .footer__container-social{    
+            .svg-container{
+                width: 30px;
+            }
+        }  
+    }
+}
+/* =============== (:Responsive:) =============== */
