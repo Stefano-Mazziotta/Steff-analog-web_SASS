@@ -4,9 +4,9 @@ const btnEN = document.getElementById('--js_btn-EN');
 const btnES = document.getElementById('--js_btn-ES');
 const btnKR = document.getElementById('--js_btn-KR');
 
-const TXT_EN = "Ephemeral moments.<br>The time and space that observes my eyes.<br>What surrounds me.";
-const TXT_ES = "Momentos efímeros.<br>El tiempo y espacio que observan mis ojos.<br>Lo que me rodea.";
-const TXT_KR = "일시적인 순간.<br>내 눈이 바라보는 시간과 공간.<br>나를 둘러싸고 있는 것.";
+const TXT_EN = '"Ephemeral moments.<br>Time and space seen through my eyes.<br> Everything that surrounds me."';
+const TXT_ES = '"Momentos efímeros.<br>El tiempo y espacio que observan mis ojos.<br>Lo que me rodea."';
+const TXT_KR = '"일시적인 순간.<br>내 눈으로 본 시간과 공간.<br>나를 둘러싼 모든 것."';
 
 // --- functions --- //
 // changeTxt_to_english() --->

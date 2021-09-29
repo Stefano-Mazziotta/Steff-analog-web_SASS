@@ -1,7 +1,7 @@
 var swiper = new Swiper(".mySwiper", {
     
     autoplay: {
-        delay: 2500,
+        delay: 3500,
     },
     pagination: {
         el: ".swiper-pagination",

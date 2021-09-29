@@ -8,15 +8,15 @@ const btn_KR = document.getElementById('--js_btn-KR');
 //declaro las constante texto.
 // texto en ingles. Light & Strong. 
 const TXT_EN_LIGHT = "My name is Stefano Mazziotta. Artistic photographer.<br> I started in this wonderful world with the Minolta Hi-Matic 7s camera, inherited from my grandfather.<br>";
-const TXT_EN_STRONG = "Through this website you will navigate the immense ocean of my analog photographs and you will be able to soak up unparalleled feelings.";
+const TXT_EN_STRONG = "Through this web you will sail across my immense ocean of analogic photographies.";
 
 // texto en español. Light & Strong.
 const TXT_ES_LIGHT = "Me llamo Stefano Mazziotta. Fotógrafo artístico.<br> Comencé en este maravilloso mundo con la cámara Minolta Hi-Matic 7s, heredada de mi abuelo.<br>"; 
-const TXT_ES_STRONG = "A través de esta web navegarás el inmenso océano de mis fotografías analógicas y podrás empaparte de sentimientos inigualables."; 
+const TXT_ES_STRONG = "A través de esta web navegarás el inmenso océano de mis fotografías analógicas."; 
 
 // texto en korean. Light & Strong.
 const TXT_KR_LIGHT = "제 이름은 스테파노 마치오타입니다. 예술 사진 작가. 나는 할아버지로부터 물려받은 Minolta Hi-Matic 7s 카메라와 함께 이 멋진 세상에서 시작했습니다.<br>";
-const TXT_KR_STRONG = "이 웹사이트를 통해 내 아날로그 사진의 거대한 바다를 탐색하고 비교할 수 없는 감정을 흡수할 수 있을 것입니다.";
+const TXT_KR_STRONG = "이 웹을 통해 당신은 아날로그 사진의 거대한 바다를 항해하게 될 것입니다.";
 
 /*=============== functions ===============*/
 // changeTxt_to_spanish() --->
