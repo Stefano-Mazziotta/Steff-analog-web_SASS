@@ -1,54 +1,67 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-require_once 'phpmailer/Exception.php';
-require_once 'phpmailer/PHPMailer.php';
-require_once 'phpmailer/SMTP.php';
+    use PHPMailer\PHPMailer\PHPMailer;
+    require_once 'phpmailer/Exception.php';
+    require_once 'phpmailer/PHPMailer.php';
+    require_once 'phpmailer/SMTP.php';
 
-$mail = new PHPMailer(true);
+    $mail = new PHPMailer(true);
 
-$alert = '';
-$statusSendClass = false;
+    $alert = '';
+    $statusSendClass = false;
 
+    
 
+    if(isset($_POST['email']) && $_POST['email'] != ''){
 
-if(isset($_POST['email']) && $_POST['email'] != ''){
+        if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
 
-    if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
+            $mailTo = 'webdeveloperrosario@gmail.com';
+            $subject = "Contact form from www.steffanalog.com";
 
-        $mailTo = 'webdeveloperrosario@gmail.com';
-        $subject = "Contact form from www.steffanalog.com";
+            $userName = $_POST['fullName'];
+            $userEmail = $_POST['email'];
+            $userMessage = $_POST['message'];
 
-        $userName = $_POST['fullName'];
-        $userEmail = $_POST['email'];
-        $userMessage = $_POST['message'];
-        
-        try{
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = $mailTo; // Gmail adress which you want to use as SMTP server.
-            $mail->Password = 'oQvsUU42'; // Gmail address password.
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = '587';
+            $template_mail = '
+            <div style="width: 500px; 
+                        height: 500px; 
+                        background-color: black;
+                        color: white;
+                        text-decoration: none;
+                        padding:20px;
+                        border-radius:10px;
+                        margin: 0 auto;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                ">
+                <h1 style="text-align:center; padding:10px; border:2px solid grey; border-radius:30px">Datos del usuario.<h1>
+                <h2>Name: '.$userName.'</h2><br><h2>Email: '.$userEmail.'</h2><br><h2 style="color:white;">Message: '.$userMessage.'</h2>
+            </div>';
+            
+            try{
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = $mailTo; // Gmail adress which you want to use as SMTP server.
+                $mail->Password = ''; // Gmail address password.
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = '587';
 
-            $mail->setFrom($mailTo); // Gmail adress which you want to use as SMTP server.
-            $mail->addAddress($mailTo); // Email address where you want to receive emails.
+                $mail->setFrom($mailTo); // Gmail adress which you want to use as SMTP server.
+                $mail->addAddress($mailTo); // Email address where you want to receive emails.
 
-            $mail->isHTML(true);
-            $mail->Subject = $subject;
-            $mail->Body='<p>Name: '.$userName.'<br>Email: '.$userEmail.'<br>Message: '.$userMessage.'</p>';
+                $mail->isHTML(true);
+                $mail->Subject = $subject;
+                $mail->Body= $template_mail;
 
-            $mail->send();
-            $statusSendClass = true;
-            $alert = '<p class="alert">The email was sent successfully.</p>';
-        } catch(Exception $e){
-            $statusSendClass = false;
-            $alert = '<p class="alert">'.$e->getMessage().'</p>';
+                $mail->send();
+                $statusSendClass = true;
+                $alert = '<p class="alert">The email was sent successfully.</p>';
+            } catch(Exception $e){
+                $statusSendClass = false;
+                $alert = '<p class="alert">'.$e->getMessage().'</p>';
+            }
         }
     }
-}
-
-
 ?>
 
 <!DOCTYPE html>

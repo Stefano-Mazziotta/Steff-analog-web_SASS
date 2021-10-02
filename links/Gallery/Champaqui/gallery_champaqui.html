@@ -477,13 +477,13 @@
             <h3 class="popup__title">Contacto mail</h3>
 
             <!-- form popup -->
-            <form action="" class="popup__form">
+            <form action="../../../php/send_mail.php" method="POST" class="popup__form">
                 <div class="form__input-container">
-                    <input type="text" placeholder="Nombre y Apellido">
-                    <input type="email" placeholder="Email">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    <input name="fullName" type="text" placeholder="Full name *" required>
+                    <input name="email" type="email" placeholder="Email *" required>
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="Message *" required></textarea>
                 </div>
-                <input class="form__btn" type="submit" value="Enviar">
+                <input class="form__btn" type="submit" value="SUBMIT">
             </form>
             
         </div>
