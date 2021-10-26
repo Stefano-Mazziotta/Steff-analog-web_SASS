@@ -254,64 +254,6 @@ section .bw-color .bw-color__container-flex .container-img .container-img__title
   text-align: center;
   padding: 20px;
 }
-section .museum {
-  background-color: #f8f9fa;
-}
-section .museum .museum__container {
-  width: 80%;
-  margin: 0px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 30px;
-}
-section .museum .museum__container .museum__title {
-  color: #212529;
-  font-size: 64px;
-  letter-spacing: 1px;
-  font-weight: 500;
-  text-align: center;
-  border-bottom: 2px solid #212529;
-  border-radius: 10px;
-  width: 60%;
-  margin-top: 0;
-  margin-bottom: 100px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
-}
-section .museum .museum__container .swiper {
-  width: 75%;
-  margin: 0 auto;
-  border-radius: 5px;
-}
-section .museum .museum__container .swiper .swiper-wrapper {
-  width: 100%;
-  margin: 0 auto;
-}
-section .museum .museum__container .swiper .swiper-wrapper .swiper-slide {
-  width: 100%;
-  margin: 0 auto;
-}
-section .museum .museum__container .swiper .swiper-wrapper .swiper-slide img {
-  border-radius: 5px;
-  width: 100%;
-}
-section .museum .museum__container .swiper .swiper-wrapper .swiper-slide:hover {
-  cursor: grab;
-}
-section .museum .museum__container .swiper .swiper-wrapper .swiper-slide:active {
-  cursor: grabbing;
-}
-section .museum .museum__container .swiper .swiper-button-next, section .museum .museum__container .swiper .swiper-button-prev {
-  --swiper-theme-color: #667eea;
-}
-section .museum .museum__container .swiper .swiper-pagination .swiper-pagination-progressbar-fill {
-  --swiper-theme-color: #667eea;
-}
 section .gallery {
   padding-bottom: 150px;
 }
