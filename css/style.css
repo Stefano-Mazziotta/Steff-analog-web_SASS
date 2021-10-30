@@ -219,7 +219,7 @@ section .bw-color {
   justify-content: center;
   padding-bottom: 100px;
   padding-top: 100px;
-  background-color: #212529;
+  background-color: rgba(108, 117, 125, 0.2);
 }
 section .bw-color .bw-color__container-flex {
   display: flex;
