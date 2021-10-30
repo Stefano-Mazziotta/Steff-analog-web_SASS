@@ -1,6 +1,6 @@
 const swiper = new Swiper('.swiper', {
   autoplay: {
-    delay: 3500,
+    delay: 4000,
   },
   // If we need pagination
   pagination: {
