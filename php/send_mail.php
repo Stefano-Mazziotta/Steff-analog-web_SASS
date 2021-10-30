@@ -42,7 +42,11 @@
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = $mailTo; // Gmail adress which you want to use as SMTP server.
+<<<<<<< HEAD
+                $mail->Password = 'oQvsUU42'; // Gmail address password.
+=======
                 $mail->Password = ''; // Gmail address password.
+>>>>>>> refs/remotes/origin/develop
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = '587';
 

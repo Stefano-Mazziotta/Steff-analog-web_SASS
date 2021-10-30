@@ -8,7 +8,7 @@ const btn_KR = document.getElementById('--js_btn-KR');
 //declaro las constante texto.
 // texto en ingles. Light & Strong. 
 const TXT_EN_LIGHT = "My name is Stefano Mazziotta. Artistic photographer.<br> I started in this wonderful world with the Minolta Hi-Matic 7s camera, inherited from my grandfather.<br>";
-const TXT_EN_STRONG = "Through this web you will sail across my immense ocean of analogic photographies.";
+const TXT_EN_STRONG = "Through this web you will sail across my inmense ocean of analogic photographies.";
 
 // texto en español. Light & Strong.
 const TXT_ES_LIGHT = "Me llamo Stefano Mazziotta. Fotógrafo artístico.<br> Comencé en este maravilloso mundo con la cámara Minolta Hi-Matic 7s, heredada de mi abuelo.<br>"; 
