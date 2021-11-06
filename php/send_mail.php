@@ -15,7 +15,8 @@
 
         if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
 
-            $mailTo = 'webdeveloperrosario@gmail.com';
+            $mailTo = 'contact@steffanalog.com';
+            $password = 'oQvsUU42';
             $subject = "Contact form from www.steffanalog.com";
 
             $userName = $_POST['fullName'];
@@ -39,19 +40,16 @@
             
             try{
                 $mail->isSMTP();
-                $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = $mailTo; // Gmail adress which you want to use as SMTP server.
-<<<<<<< HEAD
-                $mail->Password = 'oQvsUU42'; // Gmail address password.
-=======
-                $mail->Password = ''; // Gmail address password.
->>>>>>> refs/remotes/origin/develop
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                $mail->Port = '587';
+                $mail->Password = $password; // Gmail address password.
+                $mail->SMTPSecure = 'ssl';
+                $mail->SMTPAutoTLS = false;
+                $mail->Host = 'p3plzcpnl484004.prod.phx3.secureserver.net';
+                $mail->Port = '465';
 
-                $mail->setFrom($mailTo); // Gmail adress which you want to use as SMTP server.
-                $mail->addAddress($mailTo); // Email address where you want to receive emails.
+                $mail->setFrom($mailTo, 'steffanalog.com'); // Gmail adress which you want to use as SMTP server.
+                $mail->addAddress('mazziottastefano@gmail.com'); // Email address where you want to receive emails.
 
                 $mail->isHTML(true);
                 $mail->Subject = $subject;
