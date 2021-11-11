@@ -211,10 +211,11 @@ section {
             .container-img {
                 width: 25%;
                 padding: 10px;
-                border: 2px solid $principal-color-white;
+                border-top: 1px solid $principal-color-white;
+                border-bottom: 2px solid $principal-color-white;
                 border-radius: $border-radius-standard_10;
                 opacity: .7;
-                transition: opacity .5s ease;
+                transition: opacity .6s ease;
                 position: relative;
                 
                 &:hover{
@@ -295,17 +296,15 @@ section {
                     position: relative;
                     
                     border-top: 1px solid $principal-color-white;
-                    border-bottom: 1px solid $principal-color-white;
+                    border-bottom: 2px solid $principal-color-white;
                     padding: 10px;
                     border-radius: 20px;
-                    opacity: .8;
-                    transition: opacity .3s ease;
+                    opacity: .5;
+                    transition: opacity .6s ease;
                     
                     cursor: pointer;                
                     &:hover{
                         opacity: 1;
-                        border-top: 2px solid $principal-color-white;
-                        border-bottom: 2px solid $principal-color-white;
                     } 
 
                     img {
@@ -331,7 +330,7 @@ section {
 
     // ---------- aboutme ---------- //
     .aboutme{
-        background-color: $principal-color-white;
+        background-color: rgba(108, 117, 125, 0.2);
         height:100%;
         padding-bottom: 50px;
         
@@ -342,8 +341,8 @@ section {
             .aboutme__title {
                 // mixin ->
                 // styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
-                @include styles_text($principal-color-black, 64px, 1px, 500, center);
-                border-bottom: 2px solid $principal-color-black;
+                @include styles_text($principal-color-white, 64px, 1px, 500, center);
+                border-bottom: 2px solid $principal-color-white;
                 border-radius: 10px;
 
                 width: 60%;
@@ -371,13 +370,15 @@ section {
                     width: 30%;
 
                     padding: 15px;
-                    border: 1px solid $principal-color-black;
-                    border-radius: 20px;
-                    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+                    border-top: 1px solid $principal-color-white;
+                    border-bottom: 2px solid $principal-color-white;
+                    border-radius: 10px;
+                    opacity: .7;
+                    // box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
                     
-                    transition: all .1s ease;                    
+                    transition: all .3s ease;                    
                     &:hover{
-                        border: 2px solid $principal-color-black;
+                        opacity: 1;
                         box-shadow: none;
                     }
 
@@ -391,7 +392,7 @@ section {
             .aboutme__text {
                 width: 85%;
                 // mixin -> styles_text($color, $font_size, $letter_spacing, $font-weight, $text_align)
-                @include styles_text($principal-color-black, 28px, 1.5px, 600,center);
+                @include styles_text($principal-color-white, 28px, 1.5px, 600,center);
                 line-height: 1.8em;
         
                 margin: 0 auto;
@@ -409,8 +410,8 @@ section {
 
                 .translate__btn{
                     border: none;
-                    background-color: $principal-color-black;
-                    color: $principal-color-white;
+                    background-color: $principal-color-white;
+                    color: $principal-color-black;
                     cursor:pointer;
 
                     margin-left: 20px;
@@ -427,7 +428,7 @@ section {
                     transition: all .3s ease;
                     &:hover{
                         box-shadow: none;
-                        background-color: $hover-button-color;
+                        background-color: $hover-header-color;
                     }
                 }
                 .translate__btn.activate{
@@ -444,14 +445,14 @@ section {
                 cursor: pointer;
                 width: 60px;
                 height: 60px;
-                fill: $principal-color-black;
+                fill: $hover-button-color;
                 
                 margin-left: auto;
                 margin-right: auto;
 
                 transition: all .3s ease;
                 &:hover{
-                    fill: $hover-button-color;
+                    fill: $hover-header-color;
                     transform: translateY(-4px);
                 }
 
