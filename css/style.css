@@ -216,17 +216,12 @@ section .bw-color {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   padding-bottom: 100px;
   padding-top: 100px;
   background-color: rgba(108, 117, 125, 0.2);
 }
-section .bw-color .bw-color__container-flex {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-section .bw-color .bw-color__container-flex .container-img {
+section .bw-color .container-img {
   width: 25%;
   padding: 10px;
   border-top: 1px solid #f8f9fa;
@@ -236,14 +231,14 @@ section .bw-color .bw-color__container-flex .container-img {
   transition: opacity 0.6s ease;
   position: relative;
 }
-section .bw-color .bw-color__container-flex .container-img:hover {
+section .bw-color .container-img:hover {
   opacity: 1;
 }
-section .bw-color .bw-color__container-flex .container-img img {
+section .bw-color .container-img img {
   width: 100%;
   border-radius: 10px;
 }
-section .bw-color .bw-color__container-flex .container-img .container-img__title {
+section .bw-color .container-img .container-img__title {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -611,7 +606,7 @@ footer .footer__text {
     padding: 0;
   }
 
-  section .bw-color .bw-color__container-flex .container-img {
+  section .bw-color .container-img {
     width: 35%;
   }
   section .museum .museum__container .swiper {
@@ -630,11 +625,9 @@ footer .footer__text {
 
   section .bw-color {
     height: 100%;
-  }
-  section .bw-color .bw-color__container-flex {
     flex-direction: column;
   }
-  section .bw-color .bw-color__container-flex .container-img {
+  section .bw-color .container-img {
     margin-bottom: 100px;
     width: 50%;
   }
@@ -725,7 +718,7 @@ footer .footer__text {
   }
 }
 @media (max-width: 491px) {
-  section .bw-color .bw-color__container-flex .container-img {
+  section .bw-color .container-img {
     width: 70%;
   }
   section .museum .museum__container .museum__title {
@@ -776,7 +769,7 @@ footer .footer__text {
     height: 30px;
   }
 
-  section .bw-color .bw-color__container-flex .container-img .container-img__title {
+  section .bw-color .container-img .container-img__title {
     font-size: 18px;
   }
   section .gallery .gallery__container-all .gallery__title {

@@ -198,50 +198,46 @@ section {
         height: 100vh;
         display: flex;
         align-items:center;
-        justify-content: center;
+        justify-content: space-evenly;
         padding-bottom: 100px;
         padding-top: 100px;
         background-color: rgba($hover-button-color,.2);
 
-        .bw-color__container-flex {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
+        .container-img {
+            width: 25%;
+            padding: 10px;
+            
+            border-top: 1px solid $principal-color-white;
+            border-bottom: 2px solid $principal-color-white;
+            border-radius: $border-radius-standard_10;
 
-            .container-img {
-                width: 25%;
-                padding: 10px;
-                border-top: 1px solid $principal-color-white;
-                border-bottom: 2px solid $principal-color-white;
+            opacity: .7;
+            transition: opacity .6s ease;
+            position: relative;
+            
+            &:hover{
+                opacity: 1;
+            }
+
+            img {
+                width: 100%;
                 border-radius: $border-radius-standard_10;
-                opacity: .7;
-                transition: opacity .6s ease;
-                position: relative;
-                
-                &:hover{
-                    opacity: 1;
-                }
+            }
 
-                img {
-                    width: 100%;
-                    border-radius: $border-radius-standard_10;
-                }
-
-                .container-img__title {
-                    position: absolute;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    text-transform: uppercase;
-                    color: $principal-color-white;
-                    letter-spacing: 2px;
-                    font-weight: 400;
-                    width: 100%;
-                    text-align: center;
-                    padding: 20px;
-                    
-                }
+            .container-img__title {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                text-transform: uppercase;
+                color: $principal-color-white;
+                letter-spacing: 2px;
+                font-weight: 400;
+                width: 100%;
+                text-align: center;
+                padding: 20px;                
             }
         }
+        
     }
     // ---------- ✓ Black&white or color ✓ ---------- //
 
@@ -692,10 +688,8 @@ footer{
 
         // black&white or color repaired //
         .bw-color{
-            .bw-color__container-flex {
-                .container-img {
-                    width: 35%;
-                }
+            .container-img {
+                width: 35%;
             }
         }
         // ✓ black&white or color repaired ✓ //
@@ -745,13 +739,11 @@ footer{
         // black&white or color ---> position repaired //
         .bw-color{
             height: 100%;
-            .bw-color__container-flex {
-                flex-direction: column;
+            flex-direction: column;
 
-                .container-img {
-                    margin-bottom: 100px;
-                    width: 50%;
-                }
+            .container-img {
+                margin-bottom: 100px;
+                width: 50%;
             }
         }
         // ✓ black&white or color ---> position repaired ✓ //
@@ -916,11 +908,10 @@ footer{
     section{
         // black&white or color repaired. //      
         .bw-color{
-            .bw-color__container-flex { 
-                .container-img{
-                    width: 70%;
-                }
-            }
+            
+            .container-img{
+                width: 70%;
+            }            
         }
         // ✓ black&white or color repaired. ✓ //
 
@@ -1020,14 +1011,12 @@ footer{
 
     section{
         // black&white or color repaired. //      
-        .bw-color{
-            .bw-color__container-flex { 
-                .container-img{
-                    .container-img__title{
-                        font-size: 18px;
-                    }
+        .bw-color{ 
+            .container-img{
+                .container-img__title{
+                    font-size: 18px;
                 }
-            }
+            }            
         }
         // ✓ black&white or color repaired. ✓ //
 
