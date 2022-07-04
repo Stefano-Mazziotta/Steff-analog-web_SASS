@@ -3,20 +3,17 @@
     require_once 'phpmailer/Exception.php';
     require_once 'phpmailer/PHPMailer.php';
     require_once 'phpmailer/SMTP.php';
+    require_once 'config_mail.php';
 
     $mail = new PHPMailer(true);
 
     $alert = '';
-    $statusSendClass = false;
-
-    
+    $statusSendClass = false;    
 
     if(isset($_POST['email']) && $_POST['email'] != ''){
 
         if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
 
-            $mailTo = 'contact@steffanalog.com';
-            $password = 'oQvsUU42';
             $subject = "Contact form from www.steffanalog.com";
 
             $userName = $_POST['fullName'];
@@ -49,7 +46,7 @@
                 $mail->Port = '465';
 
                 $mail->setFrom($mailTo, 'steffanalog.com'); // Gmail adress which you want to use as SMTP server.
-                $mail->addAddress('mazziottastefano@gmail.com'); // Email address where you want to receive emails.
+                $mail->addAddress($addAddress); // Email address where you want to receive emails.
 
                 $mail->isHTML(true);
                 $mail->Subject = $subject;
